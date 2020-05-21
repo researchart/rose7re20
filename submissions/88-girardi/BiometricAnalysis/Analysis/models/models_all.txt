@@ -1,0 +1,7 @@
+svmLinear:kernlab
+rf:randomForest
+J48:RWeka
+C5.0:C50
+nb:klaR
+knn
+mlp:RSNNS

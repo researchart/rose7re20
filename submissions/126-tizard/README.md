@@ -1,7 +1,7 @@
 # 126 - Voice of the Users: A Demographic Study of Software Feedback Behaviour
 
 Our submitted paper (#126) presents the results of a survey of 1040 software users on their feedback giving habits.
-The goal of the study is to discovery which software users give online written feedback to app stores, product forums and social media.
+The goal of the study is to discover which software users give online written feedback to app stores, product forums and social media.
 
 ### Our Artifact
 The submitted artifact is the survey our paper is based on (pdf format), consisting of 24 questions with answer options.

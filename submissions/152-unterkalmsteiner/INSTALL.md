@@ -13,11 +13,11 @@ The source code of INCEpTION and our extension can be found in `inception-src.ta
 4. login with username `admin` and password `ccr2020`. 
 
 #### Software requirements
-We have compiled INCEpTION with the following:
+We have compiled INCEpTION with the following java version:
 ```
-java version "1.8.0_251"
-Java(TM) SE Runtime Environment (build 1.8.0_251-b08)
-Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)
+openjdk version "11.0.6" 2020-01-14
+OpenJDK Runtime Environment (build 11.0.6+10)
+OpenJDK 64-Bit Server VM (build 11.0.6+10, mixed mode)
 ```
 
 For best compatibility, we suggest to use a similar version when running INCEpTION.

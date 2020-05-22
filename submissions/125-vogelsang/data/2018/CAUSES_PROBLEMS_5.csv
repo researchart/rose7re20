@@ -1,0 +1,294 @@
+lfdn;v_254;v_281;tag
+48.0;Communication flaws between the project and the customer;Customers often do not specify the requirements enough for developers to understand what needs to be changed/implemented;Communication flaws between the project and the customer
+48.0;Communication flaws between the project and the customer;Customers often do not specify the requirements enough for developers to understand what needs to be changed/implemented;Lack of trust
+126.0;Communication flaws between the project and the customer;Lack of product dev knowledge;Complexity of domain
+126.0;Communication flaws between the project and the customer;Lack of product dev knowledge;Lack of experience of RE team members
+165.0;Communication flaws between the project and the customer;lack of methodology for collecting requirements;Lack of experience of RE team members
+444.0;Communication flaws between the project and the customer;"The customer does not provide timely feedback; customer response delay.";Lack of time
+444.0;Communication flaws between the project and the customer;"The customer does not provide timely feedback; customer response delay.";Missing prioritization by customer
+453.0;Communication flaws between the project and the customer;Not wanting to disturb a customer or following a plan;Lack of experience of RE team members
+719.0;Communication flaws between the project and the customer;"Assume an interpretation as correct; not validate the information";Lack of experience of RE team members
+947.0;Communication flaws between the project and the customer;customers sometimes misunderstand developers and vice versa;Communication flaws between the project and the customer
+947.0;Communication flaws between the project and the customer;customers sometimes misunderstand developers and vice versa;Lack of experience of RE team members
+985.0;Communication flaws between the project and the customer;Having no customers, we had to communicate with users.;NotCodable
+1091.0;Communication flaws between the project and the customer;documentation and internal processes problem ;Lack of experience of RE team members
+1091.0;Communication flaws between the project and the customer;documentation and internal processes problem ;Documentation overhead
+1111.0;Communication flaws between the project and the customer;unclear rules definition;Lack of experience of RE team members
+1168.0;Communication flaws between the project and the customer;Disinterest by some parties;Demotivation
+1168.0;Communication flaws between the project and the customer;Disinterest by some parties;Demotivation
+1171.0;Communication flaws between the project and the customer;Lack of customer involvement in the project;Missing customer involvement
+1279.0;Communication flaws between the project and the customer;Our customers are not typically savvy with technology so it can be difficult to determine what they really need;Missing IT project experience at customer side
+1331.0;Communication flaws between the project and the customer;Lack of detail, laziness, application of common sense;Weak qualification of RE team members
+1347.0;Communication flaws between the project and the customer;There is no direct and frequent communication;Missing direct communication to customer
+1351.0;Communication flaws between the project and the customer;Unsatisfied CUSTOMER;High quality expectation of customer
+1351.0;Communication flaws between the project and the customer;Unsatisfied CUSTOMER;Customer does not formally approve the requirements
+1355.0;Communication flaws between the project and the customer;Lack of communication and lack of interest BY CUSTOMER;Missing customer involvement
+1355.0;Communication flaws between the project and the customer;Lack of communication and lack of interest BY CUSTOMER;Missing communication to customer side
+1415.0;Communication flaws between the project and the customer;LACK OF ABILITY TO EXPRESS IDEAS BY THE CUSTOMER;Customer does not know what he wants
+1526.0;Communication flaws between the project and the customer;Weak domain knowledge;Missing domain knowledge
+1650.0;Communication flaws between the project and the customer;The interface between them;Communication flaws between team and customer
+1669.0;Communication flaws between the project and the customer;INFORMATION HIDDEN BY THE CUSTOMER;Conflict of interests at customer side
+1844.0;Communication flaws between the project and the customer;The customer has lack of time;Lack of time
+205.0;Communication flaws within the project team;silo organizataion;NotCodable
+231.0;Communication flaws within the project team;Immature organizational culture;Lack of experience of RE team members
+387.0;Communication flaws within the project team;Different goals of  project manager and test manager;Poor project management
+545.0;Communication flaws within the project team;culture;Lack of experience of RE team members
+928.0;Communication flaws within the project team;Failures in requirements eventually lead to problems throughout the whole production chain.;Incomplete requirements
+1006.0;Communication flaws within the project team;Lack of technical meetings;Too many meetings
+1012.0;Communication flaws within the project team;Testing gaps;Missing check of requirements
+1062.0;Communication flaws within the project team;different nationality;Language barriers
+1101.0;Communication flaws within the project team;little interaction within the team;Miscommunication between RE team
+1118.0;Communication flaws within the project team;Once more, language is often the problem;Language barriers
+1139.0;Communication flaws within the project team;Developers are under pressure;High workload
+1406.0;Communication flaws within the project team;Many projects / tasks;High workload
+1441.0;Communication flaws within the project team;too much workload;High workload
+1458.0;Communication flaws within the project team;THE TEAM IS CONFORMED BY technicians from different RESPONDING TO DIFFERENT NEEDS AND NO OTHER COMMUNICATION;Miscommunication between RE team
+1458.0;Communication flaws within the project team;THE TEAM IS CONFORMED BY technicians from different RESPONDING TO DIFFERENT NEEDS AND NO OTHER COMMUNICATION;Team fluctuation
+1918.0;Communication flaws within the project team;organizational problems of the teams.;Weak qualification of RE team members
+1467.0;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;insufficient effort put in for the requirement analysis;Poor requirements elicitation techniques
+217.0;Gold plating (implementation of features without corresponding requirements);poor skill;Lack of teamwork skills
+259.0;Gold plating (implementation of features without corresponding requirements);waste of time;Demotivation
+259.0;Gold plating (implementation of features without corresponding requirements);waste of time;Demotivation
+549.0;Gold plating (implementation of features without corresponding requirements);Change requests often crop up and sometimes if high priority or you have time constraints they don't get detailed fully/properly;Customer does not know what he wants
+549.0;Gold plating (implementation of features without corresponding requirements);Change requests often crop up and sometimes if high priority or you have time constraints they don't get detailed fully/properly;Incomplete requirements
+572.0;Gold plating (implementation of features without corresponding requirements);requirements have been verbalised and not documented ;Lack of requirements management
+649.0;Gold plating (implementation of features without corresponding requirements);unrealistic expectations;High quality expectation of customer
+661.0;Gold plating (implementation of features without corresponding requirements);It is a general characteristic of the client;NotCodable
+959.0;Gold plating (implementation of features without corresponding requirements);To meet an urgent request, sometimes we performed implementations that way (fire-fighting);Subjective interpretations
+1011.0;Gold plating (implementation of features without corresponding requirements);Individual wishes of employees on the customer side.;Conflicting stakeholder viewpoints
+1033.0;Gold plating (implementation of features without corresponding requirements);It's a great immediate and legacy waste, the overload with what should not be being done, the focus is on value and real needs;Poor project management
+1350.0;Gold plating (implementation of features without corresponding requirements);LACK OF KNOWLEDGE OF CUSTOMER'S EMPLOYEES;Missing engagement by customer
+1357.0;Gold plating (implementation of features without corresponding requirements);DELAYED DELIVERY OF INPUT BY CUSTOMER;Customer does not know what he wants
+58.0;Incomplete or hidden requirements;"business as usual; always worked this way";Customer does not know what he wants
+58.0;Incomplete or hidden requirements;"business as usual; always worked this way";Poor project management
+150.0;Incomplete or hidden requirements;Not enough time and support from the vendor to explore and document all the detailed system requirements ;Incomplete requirements
+160.0;Incomplete or hidden requirements;see above;NotCodable
+364.0;Incomplete or hidden requirements;"not enough time for doing a complete RE; RE was done by the way";Incomplete requirements
+427.0;Incomplete or hidden requirements;Too little time spent in the pre-study phase for some areas;Incomplete requirements
+479.0;Incomplete or hidden requirements;"Implicit knowledge; No teaching of the team members in requirements engineering";NotCodable
+524.0;Incomplete or hidden requirements;Elicitation not realized correctly;Incomplete requirements
+534.0;Incomplete or hidden requirements;Little time;Lack of time
+626.0;Incomplete or hidden requirements;Lack of domain knowledge;Missing domain knowledge
+847.0;Incomplete or hidden requirements;Not enough prototyping and testing in early stages ;Missing completeness check of requirements
+851.0;Incomplete or hidden requirements;the lack of compromise of stakeholders or the assignment of wrong people to that function lead to the situation that when end users start using the system unwanted requirements are discovered;Unclear roles and responsibilities at customer side
+856.0;Incomplete or hidden requirements;little customer availability, short timeframe to perform the analysis and delivery of the product, making the specification not very accurate;Lack of time
+856.0;Incomplete or hidden requirements;little customer availability, short timeframe to perform the analysis and delivery of the product, making the specification not very accurate;Missing completeness check of requirements
+870.0;Incomplete or hidden requirements;inexperienced Systems Analyst;Lack of experience of RE team members
+909.0;Incomplete or hidden requirements;Lack of immersion in the business and domain areas, including by the customer;Lack of interest about customers domain
+909.0;Incomplete or hidden requirements;Lack of immersion in the business and domain areas, including by the customer;Lack of interest about customers domain
+912.0;Incomplete or hidden requirements;Often because the business sponsor underestimates the process impacts, and omits a stakeholder or stakeholder group;Insufficient information
+990.0;Incomplete or hidden requirements;Delay between the requirements gathering and enforcement;Poor project management
+1141.0;Incomplete or hidden requirements;missing experience on existing solutions on both sides customer and also concrator ;Missing technical knowledge
+1221.0;Incomplete or hidden requirements;the client does not detail out the whole process. sometimes it is necessary to observe;Missing customer involvement
+1225.0;Incomplete or hidden requirements;No review by the customer;Missing customer involvement
+1289.0;Incomplete or hidden requirements;Do to he leak of expereinced business specialists often onl y simple cases are in discussion;NotCodable
+1426.0;Incomplete or hidden requirements;requirements are formulated by customer, who has little or no experience;Missing RE awareness at customer side
+1455.0;Incomplete or hidden requirements;MEETING FAILED REQUIREMENTS;Incomplete requirements
+1482.0;Incomplete or hidden requirements;BAD COMMUNICATION;Communication flaws between team and customer
+1805.0;Incomplete or hidden requirements;Customer not used to formalize requirements;Missing RE awareness at customer side
+1840.0;Incomplete or hidden requirements;more related to not all are aware of the requirements, lack of communication;Missing RE awareness at customer side
+1840.0;Incomplete or hidden requirements;more related to not all are aware of the requirements, lack of communication;Communication flaws between team and customer
+1894.0;Incomplete or hidden requirements;Normal result when working with successive prototyping steps where the requirements are successively deepened;NotCodable
+199.0;Inconsistent requirements;Insufficient time spent in development and lack of proper review;Lack of requirements management
+263.0;Inconsistent requirements;complexity of project (lack of understanding the objectives and constraints);Complexity of project
+359.0;Inconsistent requirements;There are businesses that operate at the discretion of workers.;Conflict of interests at customer side
+894.0;Inconsistent requirements;Rework;Rework
+1021.0;Inconsistent requirements;botched analysis;Lack of requirements management
+1064.0;Inconsistent requirements;Lack of requirement engineering competence:Lack of project management competence;Lack of requirements management
+1064.0;Inconsistent requirements;Lack of requirement engineering competence:Lack of project management competence;Missing RE awareness at customer side
+1066.0;Inconsistent requirements;Customer requirements were either totally vague or extremely detailed...;Unclear roles and responsibilities at customer side
+1124.0;Inconsistent requirements;Due to lack of project internal communication.;Lack of communication channels
+1126.0;Inconsistent requirements;"Lack of experience in driving requirements discovery process; unprepared key users;";Lack of experience of RE team members
+1316.0;Inconsistent requirements;requirement grooming dot done accurate enough;NotCodable
+1402.0;Inconsistent requirements;Communication skill sets weak in sales/marketing;Conflict of interests at customer side
+1675.0;Inconsistent requirements;Lack of communication between analysts, design etc;Miscommunication between RE team
+1917.0;Inconsistent requirements;inexperienced personal;Lack of experience of RE team members
+213.0;Insufficient support by customer;There is situations where customer representatives are too busy or less interested;Lack of time
+213.0;Insufficient support by customer;There is situations where customer representatives are too busy or less interested;Insufficient collaboration in process
+278.0;Insufficient support by customer;lack of trust relationship, lack of negotiation;Lack of trust
+295.0;Insufficient support by customer;Absence of sponsor;NotCodable
+377.0;Insufficient support by customer;Lack of senior engagement from the customer;Missing customer involvement
+468.0;Insufficient support by customer;It is critical that the customer is involved in the project and is willing to provide as much help as necessary.;Missing customer involvement
+740.0;Insufficient support by customer;Availability of the client;Strict time schedule by customer
+1051.0;Insufficient support by customer;Insufficient customer motivation;Demotivation
+1204.0;Insufficient support by customer;Staff access limited;Insufficient collaboration in process
+1422.0;Insufficient support by customer;INCOMPLETE REQUIREMENTS;Incomplete requirements
+1454.0;Insufficient support by customer;INSUFFICIENT SUPPORT BY CUSTOMER;Insufficient collaboration in process
+1820.0;Insufficient support by customer;Communication failure;Communication flaws between team and customer
+1842.0;Insufficient support by customer;Client was not dedicated exclusively to my project, so sometimes he had other projects to which devoted more attention - the other projects were less important, but often were more urgent;Insufficient collaboration in process
+1933.0;Insufficient support by customer;challenges in the actual deployment;Complexity of project
+203.0;Insufficient support by project lead;Answer same with the above;NotCodable
+268.0;Insufficient support by project lead;Can't overview the stakeholders and their problems ;Customer does not know what he wants
+865.0;Insufficient support by project lead;Lack of interest;Lack of interest about customers domain
+1341.0;Insufficient support by project lead;CUSTOMERS DO NOT TAKE THE TIME TO LEARN;Lack of time
+1413.0;Insufficient support by project lead;CUSTOMERS Do NOT TAKE THE TIME TO LEARN;Lack of time
+1419.0;Insufficient support by project lead;WEAK RELATIONS;Communication flaws between team and customer
+1703.0;Insufficient support by project lead;The responsible should be part of the project TO SEE THE CONSEQUENCES OF CHANGE;Insufficient collaboration in process
+283.0;Missing traceability;test coverage unknown;Lack of experience of RE team members
+710.0;Missing traceability;tools and processes issue;Poor project management
+916.0;Missing traceability;Lack of documentation for seting up traceabilities (business rules, functional requirements, non-functional requirements);Lack of experience of RE team members
+924.0;Missing traceability;requirements writeup;Lack of requirements management
+1100.0;Missing traceability;Makes the documentation more complex ;Lack of experience of RE team members
+1163.0;Missing traceability;Programming before stating the problem;Lack of experience of RE team members
+1187.0;Missing traceability;Lack of documentation refinement;Lack of experience of RE team members
+1207.0;Missing traceability;lack of systematic approach and processes;Poor project management
+168.0;Moving targets (changing goals, business processes and / or requirements);The project lacks a clear goal.;Complexity of project
+384.0;Moving targets (changing goals, business processes and / or requirements);"customer does not follow the goal to standardize processes around the developed software; therefore software is often changed to accommodate individual and specific business requirements and processes";Lack of requirements management
+393.0;Moving targets (changing goals, business processes and / or requirements);long project span;Complexity of project
+482.0;Moving targets (changing goals, business processes and / or requirements);Frequent UI changes;NotCodable
+485.0;Moving targets (changing goals, business processes and / or requirements);last minute emergency affecting current developments;Lack of a well-defined RE process
+640.0;Moving targets (changing goals, business processes and / or requirements);"customer resistance to change; poor execution of newly required documentation";Conflict of interests at customer side
+684.0;Moving targets (changing goals, business processes and / or requirements);Lever ;NotCodable
+849.0;Moving targets (changing goals, business processes and / or requirements);The type of contract often changed;Customer does not know what he wants
+918.0;Moving targets (changing goals, business processes and / or requirements);The process is not standardized, it is very volatile;Lack of a well-defined RE process
+933.0;Moving targets (changing goals, business processes and / or requirements);last minute requirements change.;Volatile requirements
+984.0;Moving targets (changing goals, business processes and / or requirements);customer requirements;NotCodable
+1069.0;Moving targets (changing goals, business processes and / or requirements);individual initiatives;Missing of a global view of the system
+1161.0;Moving targets (changing goals, business processes and / or requirements);CHANGING PRIORITIES FOR LEGAL CONSTRAINTS.;Lack of change management at customer side
+1238.0;Moving targets (changing goals, business processes and / or requirements);"volatile market; problems in achieving certain goals that make it necessary to reprioritise";Lack of change management at customer side
+1239.0;Moving targets (changing goals, business processes and / or requirements);customer changes their plan with insufficient synchronisation with the project;Lack of change management at customer side
+1283.0;Moving targets (changing goals, business processes and / or requirements);Lack of sufficient strategic planning on the customer side;Lack of change management at customer side
+1742.0;Moving targets (changing goals, business processes and / or requirements);lacks in customer understanding how changes impacts project regarding economics, planning resources;Lack of change management at customer side
+1753.0;Moving targets (changing goals, business processes and / or requirements);Our technical world is changing. In our case its available bandwidth in telecom networks, more routers between nodes, mor capable endpoints (smartphones, tablets), and changing usecases (like streaming media, netflix...);Changing business needs
+41.0;Stakeholders with difficulties in separating requirements from previously known solution designs;We are basing our project off of another app that we have used, but we are trying to make it better - this makes it difficult to see our innovation as the customers are used to the old apps;Lack of requirements management
+446.0;Stakeholders with difficulties in separating requirements from previously known solution designs;frustration;Demotivation
+864.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Poor involvement in the project;Lack of interest about customers domain
+901.0;Stakeholders with difficulties in separating requirements from previously known solution designs;very large product, causing this difficulty;Complexity of project
+921.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Has requirements versioning.;NotCodable
+930.0;Stakeholders with difficulties in separating requirements from previously known solution designs;The client tries to define the solution based on the known and not based on what is best;Missing RE awareness at customer side
+1340.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Poorly planned REQUIREMENTS;Lack of requirements management
+1349.0;Stakeholders with difficulties in separating requirements from previously known solution designs;CUSTOMER DOES NOT DETACH HIMSELF FROM EXISTING SOLITIONS / RESISTANCE TO CHANGE;Conflict of interests at customer side
+1433.0;Stakeholders with difficulties in separating requirements from previously known solution designs;LACK OF KNOWLEDGE;Missing domain knowledge
+1668.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Difficult to quantify;Complexity of project
+1670.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Difficult to quantify;Complexity of project
+1896.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Stakeholders non tech-savvy;Missing IT project experience at customer side
+1923.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Lack of training;Lack of training
+1969.0;Stakeholders with difficulties in separating requirements from previously known solution designs;Unwillingness to re-engineer business processes in the contects of new technology.;Lack of creativity
+120.0;Technically unfeasible requirements;Lack of technical studies;Lack of training
+188.0;Technically unfeasible requirements;The want to copy specific features from other products that can not fit in the current System Infrastructure.;Lack of creativity
+208.0;Technically unfeasible requirements;legacy software is still the king and missing knowledge about the basic facts;Lack of creativity
+267.0;Technically unfeasible requirements;Not enough communication and analysis ;Miscommunication between RE team
+355.0;Technically unfeasible requirements;new technology like BEV battery electric vehicles with a lot of challenges;Complexity of project
+416.0;Technically unfeasible requirements;New tech, first ever done;Lack of training
+1296.0;Technically unfeasible requirements;Risky project goals;Complexity of project
+1542.0;Technically unfeasible requirements;1 platform leads to a common base of the functionality and asking for contradictory features to that communality only increases complexity and makes in many cases no real business case;NotCodable
+1727.0;Technically unfeasible requirements;Ambiguous REQUIREMENTS;Requirements remain too abstract
+81.0;Terminological problems;Cultural-language differences;Language barriers
+93.0;Terminological problems;history;NotCodable
+97.0;Terminological problems;Many undocumented abbreviations;Unclear terminology
+106.0;Terminological problems;Lack of quality time;Lack of time
+182.0;Terminological problems;Software required;Poor project management
+249.0;Terminological problems;Everyone comes from a different background;Missing domain knowledge
+330.0;Terminological problems;Role taken by each stakeholder;Unclear roles and responsibilities at customer side
+523.0;Terminological problems;Lack of an analyst and a written document from a very poor shape;Insufficient team size
+525.0;Terminological problems;Always a problem between project, cutomer ande the internal departments at the customer (e.g production and finance);Lack of communication channels
+586.0;Terminological problems;same word can have a differnt meaning ;Unclear terminology
+1017.0;Terminological problems;different teams using the same thing for different things;Unclear terminology
+1114.0;Terminological problems;Lack of concern of stakeholders.;Insufficient collaboration in process
+1266.0;Terminological problems;Change scenarios in sequential cascade of users.;Volatile requirements
+1327.0;Terminological problems;Somtimes results are not htat good as expected - redesing is requestred.;High quality expectation of customer
+1353.0;Terminological problems;CUSTOMER AND TEAM DO NOT agree;Communication flaws between the project and the customer
+1356.0;Terminological problems;Unsatisfied CUSTOMER;High quality expectation of customer
+1424.0;Terminological problems;UNDERSPECIFIED REQUIREMENTS ;Communication flaws between the project and the customer
+1466.0;Terminological problems;Some generic terms are heavily loaded with application-specific meaning in some circles.;Unclear terminology
+1651.0;Terminological problems;Consistent jargon across different parts of the business;NotCodable
+1761.0;Terminological problems;To get the project team to see the whole picture ;NotCodable
+1810.0;Terminological problems;Different backgrounds for different team members;Team fluctuation
+1941.0;Terminological problems;Perhaps the failure of a list of terms to use and their definitions;Unclear terminology
+167.0;Time boxing / Not enough time in general;Communication;Lack of communication channels
+297.0;Time boxing / Not enough time in general;Project planning;Poor project management
+467.0;Time boxing / Not enough time in general;both the team and the client, sometimes do not understand the importance of devoting more time to specific activities, but which make the project take a little longer for the sake of obtaining a better result;Poor project management
+819.0;Time boxing / Not enough time in general;Lack of planning;Poor project management
+929.0;Time boxing / Not enough time in general;Urgency for results;Strict time schedule by customer
+956.0;Time boxing / Not enough time in general;NP;NotCodable
+1291.0;Time boxing / Not enough time in general;Complete development of a new product in a small timeframe;NotCodable
+1384.0;Time boxing / Not enough time in general;the client takes long to approve the filed work and shortens the remaining time schedule;Missing prioritization by customer
+1435.0;Time boxing / Not enough time in general;INSUFFICIENT PERSONAL IN MANY PROJECTS;Insufficient team size
+1459.0;Time boxing / Not enough time in general;ALL IS DONE AT LAST MOMENT;Lack of project management
+1751.0;Time boxing / Not enough time in general;Wrong time estimation;Poor requirements elicitation techniques
+1812.0;Time boxing / Not enough time in general;customer wants everthing right now - problem with scoping;Missing prioritization by customer
+1965.0;Time boxing / Not enough time in general;Due to constraints to the budget approved for the project;Poor project management
+129.0;Unclear / unmeasurable non-functional requirements;Poor understanding of need;Lack of teamwork skills
+210.0;Unclear / unmeasurable non-functional requirements;requirements are taken well;NotCodable
+313.0;Unclear / unmeasurable non-functional requirements;Due to time pressure some non-functional requirements end up being less well specified than the functional requirements.  E.g. a reference to an external document rather than pulling out and specifying individual relevant requirements.;Inability to specify measurable non-functional requirements
+425.0;Unclear / unmeasurable non-functional requirements;Hard to know if it is right.;Poor project management
+437.0;Unclear / unmeasurable non-functional requirements;"weaknesses when defining them; difficulty when quantifying them";NotCodable
+676.0;Unclear / unmeasurable non-functional requirements;the client is not able to define want things he wants;Customer does not formally approve the requirements
+694.0;Unclear / unmeasurable non-functional requirements;lack of pre-sales to better understand client needs;Requirements engineer has no influence on customer
+952.0;Unclear / unmeasurable non-functional requirements;process not defined in one go;NotCodable
+1010.0;Unclear / unmeasurable non-functional requirements;not reviewed by testers;Poor project management
+1031.0;Unclear / unmeasurable non-functional requirements;little time is spent on revealing requirements.;Poor project management
+1097.0;Unclear / unmeasurable non-functional requirements;Non-functional requirements are requested at high level;Inability to specify measurable non-functional requirements
+1122.0;Unclear / unmeasurable non-functional requirements;Expectation without details or request, but implicit in the customer view;High quality expectation of customer
+1416.0;Unclear / unmeasurable non-functional requirements;EMPLOYEES WHO DO NOT COLLABORATE;Conflict of interests at customer side
+1621.0;Unclear / unmeasurable non-functional requirements;Specifying requirements with  it should work like this product ;NotCodable
+1676.0;Unclear / unmeasurable non-functional requirements;this generally works out fine for us, but we don't always think the non-functional requirements through, in favour of delivering more stories in the current sprint.;Inability to specify measurable non-functional requirements
+1695.0;Unclear / unmeasurable non-functional requirements;LACK OF PROCESS INTEGRATION;Poor requirements elicitation techniques
+1698.0;Unclear / unmeasurable non-functional requirements;Unclear REQUIREMENTS;Poor requirements elicitation techniques
+1744.0;Unclear / unmeasurable non-functional requirements;Same;NotCodable
+1759.0;Unclear / unmeasurable non-functional requirements;informal nature of the project;Complexity of domain
+1849.0;Unclear / unmeasurable non-functional requirements;Bad requirement interviews;Poor requirements elicitation techniques
+1909.0;Unclear / unmeasurable non-functional requirements;Lack of methodology;Poor project management
+1961.0;Unclear / unmeasurable non-functional requirements;no one cares about this (i.e. no time, budget to even define them), until something breaks / someone complains;Lack of time
+119.0;Underspecified requirements that are too abstract and allow for various interpretations;customer not communicating wider system design issues;Poor requirements elicitation techniques
+147.0;Underspecified requirements that are too abstract and allow for various interpretations;Project goal is unclear;Complexity of project
+876.0;Underspecified requirements that are too abstract and allow for various interpretations;generally requirements are described when new functionalities are discovered, allowing refactoring,;Poor requirements elicitation techniques
+880.0;Underspecified requirements that are too abstract and allow for various interpretations;Laws as a source of requirements.;Thinking in legacy systems
+910.0;Underspecified requirements that are too abstract and allow for various interpretations;Staff training in the elicitation and writing of requirements;Lack of experience of RE team members
+923.0;Underspecified requirements that are too abstract and allow for various interpretations;Customer has difficulty to list / present requirements;Customer does not know what he wants
+945.0;Underspecified requirements that are too abstract and allow for various interpretations;very complex requirements with N possibilities ;Complexity of domain
+987.0;Underspecified requirements that are too abstract and allow for various interpretations;more time required;Poor requirements elicitation techniques
+1014.0;Underspecified requirements that are too abstract and allow for various interpretations;bad documentation;Documentation overhead
+1080.0;Underspecified requirements that are too abstract and allow for various interpretations;The concepts are weak and not documented, the same indicator may have several meanings. Customers are unclear about the full organizational chart.;Unclear terminology
+1417.0;Underspecified requirements that are too abstract and allow for various interpretations;DIFFERENCES IN THE KNOWLEDGE ABOUT technologies;Poor project management
+1462.0;Underspecified requirements that are too abstract and allow for various interpretations;CUSTOMER DOES NOT KNOW WHAT HE NEEDS TO BE SATISFIED;Customer does not know what he wants
+1620.0;Underspecified requirements that are too abstract and allow for various interpretations;Sometimes requirements are not specific enough from the customer or account management so clarification is needed. ;Requirements remain too abstract
+1718.0;Underspecified requirements that are too abstract and allow for various interpretations;"Lack of mechanism to generate specific enough requirements; Shortage of time to specify requirements";Poor requirements elicitation techniques
+1741.0;Underspecified requirements that are too abstract and allow for various interpretations;Assumptions of same knowledge;Poor requirements elicitation techniques
+1755.0;Underspecified requirements that are too abstract and allow for various interpretations;Missunderstandings;Customer does not know what he wants
+1755.0;Underspecified requirements that are too abstract and allow for various interpretations;Missunderstandings;Lack of requirements management
+1828.0;Underspecified requirements that are too abstract and allow for various interpretations;"multiple responsibles for the writing of requirements; lack of technical knowlede when writing the requirements";Missing technical knowledge
+1962.0;Underspecified requirements that are too abstract and allow for various interpretations;"Some requirements are assumed as given and are not written down;";Incomplete requirements
+663.0;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;No explicit procedure model in cerntain disciplines and management methods ;Lack of a well-defined RE process
+722.0;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;It happens;NotCodable
+1082.0;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;.;NotCodable
+1358.0;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;changing market;Changing business needs
+1411.0;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;too frequent and highly urgent projects and change requests;Changing business needs
+1560.0;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;Attempt to please customer by giving them what they ask for rather than digging for what they really need;Lack of a well-defined RE process
+1791.0;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;as;NotCodable
+146.0;Weak access to customer needs and / or (internal) business information;internal politics and big organisations with long decision paths;NotCodable
+149.0;Weak access to customer needs and / or (internal) business information;to many people in the communication line, RE engineers have no direwct access to customer;Missing direct communication to customer
+179.0;Weak access to customer needs and / or (internal) business information;Do not provide enough information;Insufficient information
+378.0;Weak access to customer needs and / or (internal) business information;too little focus on understanding the complete picture;Lack of experience of RE team members
+512.0;Weak access to customer needs and / or (internal) business information;not enough education on importance of committment on all sides and contact between the two;NotCodable
+795.0;Weak access to customer needs and / or (internal) business information;Customer provides little in the way of useful contact points other than a single person, would be great except that single person doesn't use the software;Insufficient information
+917.0;Weak access to customer needs and / or (internal) business information;insufficient time for gathering requirements, insufficient customer time, lack of customer commitment for approval of requirements / versions of the system;Lack of time
+1055.0;Weak access to customer needs and / or (internal) business information;busy customers and users;Lack of time
+1065.0;Weak access to customer needs and / or (internal) business information;Lack of Application Lifecycle Management;Poor project management
+1079.0;Weak access to customer needs and / or (internal) business information;Interviews with end users and not the key users;Incomplete requirements
+1105.0;Weak access to customer needs and / or (internal) business information;Customer keeps knowledge;Insufficient information
+1194.0;Weak access to customer needs and / or (internal) business information;Distinguishing between the requirement and the actual need often allows the team to address better solutions.;NotCodable
+1229.0;Weak access to customer needs and / or (internal) business information;The client does not feel that the system is built for his needs and sees himself as not part of the project;Demotivation
+1617.0;Weak access to customer needs and / or (internal) business information;Customer is not interested, not willing to share business critical information;Requirements engineer has no influence on customer
+144.0;Weak knowledge about customer's application domain;each of our customers has a unique business interest, and we are consultants so every time we go into a client organization, we have to very quickly learn about their industry and domain (which takes time and can cause some delays);Lack of project management
+170.0;Weak knowledge about customer's application domain;no communication with customer;Missing communication to customer side
+230.0;Weak knowledge about customer's application domain;As an engineer, I don't always deal with the customer and when I receive the requirements, I do not know why is the requirement even needed. Knowing a little more background always helps me create better implementation.;Lack of requirements management
+304.0;Weak knowledge about customer's application domain;"staff turnover; consultancy culture";Team fluctuation
+461.0;Weak knowledge about customer's application domain;Customer does not provide complete information;Insufficient information
+570.0;Weak knowledge about customer's application domain;part of the organization has never visited a customer;Lack of experience of RE team members
+637.0;Weak knowledge about customer's application domain;Consultancy company with not enough experience from the industry.;Lack of experience of RE team members
+868.0;Weak knowledge about customer's application domain;lack of time, lack of experience;Lack of time
+868.0;Weak knowledge about customer's application domain;lack of time, lack of experience;Lack of experience of RE team members
+879.0;Weak knowledge about customer's application domain;Business Analyst not immersed in the client application.;Poor project management
+1039.0;Weak knowledge about customer's application domain;It occurs when the project is from a new domain for the team;Missing domain knowledge
+1343.0;Weak knowledge about customer's application domain;THEY DO NOT MASTER THE SYSTEM CREATED AND THEY HAVE PROBLEMS WITH IT ;Incomplete requirements
+1624.0;Weak knowledge about customer's application domain;Some of the features implemented are not necessarily customers number one focus;Lack of requirements management
+1705.0;Weak knowledge about customer's application domain;Ambiguous REQUIREMENTS;Requirements remain too abstract
+1804.0;Weak knowledge about customer's application domain;Lack of Communication between customer and Developers or Architects;Communication flaws between team and customer
+1911.0;Weak knowledge about customer's application domain;Lack of introductory documentation;Missing documentation
+163.0;Weak relationship between customer and project lead;Project lead tells customer one thing, does the opposite. ;Lack of leadership
+573.0;Weak relationship between customer and project lead;Makes it difficult for project team to successfully implement solutions if leadership is weak;Lack of leadership
+768.0;Weak relationship between customer and project lead;no rapport building;NotCodable
+1339.0;Weak relationship between customer and project lead;BREACH IN WORK SCHEDULES;Poor project management
+1354.0;Weak relationship between customer and project lead;WEAK RELATIONSHIP BETWEEN THE PROJECT LEADER AND THE CUSTOMER;Communication flaws between team and customer
+1717.0;Weak relationship between customer and project lead;POOR INFORMATION PROVIDED BY THE CUSTOMER;Insufficient information

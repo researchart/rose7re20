@@ -1,0 +1,7 @@
+<div class="img-container">
+  <img *ngIf="image_svg == null" [src]="image_url" (click)="zoomed = !zoomed" [style.cursor]="zoomed ? 'zoom-out': 'zoom-in'" [style.max-width]="zoomed ? 'none': '100%'" [style.max-height]="zoomed ? 'none': '100%'"/>
+  <div #svgContainer *ngIf="image_svg != null" [innerHtml]="image_svg" (click)="zoomed = !zoomed; svgZoomUpdate()" [style.cursor]="zoomed ? 'zoom-out': 'zoom-in'">
+  </div>
+</div>
+<div class="explanation">Hover over the nodes to show their human-readable label.</div>
+<button mat-raised-button color="primary" style="margin-top: 15px; margin-bottom: 15px; display: block; width: 100px; margin-left: auto; margin-right: auto;" (click)="dialogRef.close()">Close</button>

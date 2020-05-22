@@ -1,0 +1,275 @@
+lfdn;v_252;v_285;tag
+160;Communication flaws between the project and the customer;implications by project people ;NotCodable
+249;Communication flaws between the project and the customer;Doing same work multiple times;Increased maintenance costs
+263;Communication flaws between the project and the customer;late sigh-off;Time overrun
+384;Communication flaws between the project and the customer;"great effort spent in clarification; risk that the software does not meet requirements";Increased complexity in RE
+637;Communication flaws between the project and the customer;Missing requirements.;Incomplete Requirements
+880;Communication flaws between the project and the customer;changes;Increased number of change requests
+930;Communication flaws between the project and the customer;the customer and the project interpret different things about the same point;Increased difficulty of requirements elicitation
+1101;Communication flaws between the project and the customer;deadline, scope and cost problems;Difficulties in project management
+1316;Communication flaws between the project and the customer;bad UX or wrong functionality;Poor product quality
+1339;Communication flaws between the project and the customer;CRITICAL POINTS WITH PEOPLE that OPPOSE CHANGES;Conflicts within the team
+1357;Communication flaws between the project and the customer;INCREASED RESOURCES TO MEET customer satisfaction;Inefficient development
+1424;Communication flaws between the project and the customer;ABSENCE OF MATERIAL;NotCodable
+1828;Communication flaws between the project and the customer;"delays in work; difficulty in clarification of requirements";Time overrun
+1840;Communication flaws between the project and the customer;same as the first;NotCodable
+150;Communication flaws within the project team;Delays in schedule;Time overrun
+165;Communication flaws within the project team;delays, budget overruns, sometimes reduction of deliverable performance (rarely);Time overrun
+166;Communication flaws within the project team;process takes too long;Time overrun
+167;Communication flaws within the project team;"frustration; delays";Overall demotivation
+534;Communication flaws within the project team;low productivity meetings and lost time discussing;Inefficient development
+722;Communication flaws within the project team;Lot of rework, bad team mood;Increased maintenance costs
+1055;Communication flaws within the project team;some difficulties at development time;Inefficient development
+1126;Communication flaws within the project team;"Complications in the management of the activities of the team; Increased project development costs; Delays in deliveries;";Increased maintenance costs
+1415;Communication flaws within the project team;UNAVAILABILITY;Increased difficulty of requirements elicitation
+1620;Communication flaws within the project team;Relatively inconsequential in my experience. ;NotCodable
+1675;Communication flaws within the project team;Duplicate/redundant work;Increased maintenance costs
+1894;Communication flaws within the project team;"rework; team spirit disruptions;";Increased maintenance costs
+106;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;Prolonged testing phase;Decreased test efficiency
+168;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;People neglect the demands of a project's finer details.;Incomplete Requirements
+213;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;Delays;Time overrun
+570;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;longer time to market;Time overrun
+586;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;problems in defining requirements;Increased difficulty of requirements elicitation
+923;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;Client interferance in the development process;Inefficient development
+1031;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;customer dissatisfaction and within the team;Customer dissatisfaction
+1207;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;functionality implemented does not meet the expectations;Customer dissatisfaction
+1624;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;some requirements are not taken further;Poor documentation of requirements
+1697;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;Waste of time.;Inefficient development
+1705;Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements;UNFINISHED PROJECTS;Customer dissatisfaction
+182;Gold plating (implementation of features without corresponding requirements);Quality matters ;Poor product quality
+188;Gold plating (implementation of features without corresponding requirements);"Delays in development; Demotivation in Dev Team";Time overrun
+215;Gold plating (implementation of features without corresponding requirements);increased costs, higher time effort to finish project;Increased maintenance costs
+467;Gold plating (implementation of features without corresponding requirements);necessary features are neglected, and characteristics not requested by the customer are given;Implementation of irrelevant requirements
+847;Gold plating (implementation of features without corresponding requirements);Wasted resource ;Inefficient development
+864;Gold plating (implementation of features without corresponding requirements);Difficulty in maintenance and gaps in documentation;Increased maintenance costs
+909;Gold plating (implementation of features without corresponding requirements);Increased time and cost of the project;Time overrun
+937;Gold plating (implementation of features without corresponding requirements);Projects does not finish;Customer dissatisfaction
+1651;Gold plating (implementation of features without corresponding requirements);Presents bloats project timeframes;Time overrun
+1969;Gold plating (implementation of features without corresponding requirements);The system does thing that aren't helpful to the customer;Implementation of irrelevant requirements
+93;Incomplete or hidden requirements;frustration in customers;Customer dissatisfaction
+199;Incomplete or hidden requirements;Failures in qualification and rework.  Also causes rework of the products being backfilled.;Poor product quality
+205;Incomplete or hidden requirements;"Usually unmet; dissatisfied customer";Customer dissatisfaction
+268;Incomplete or hidden requirements;Bad quality;Poor product quality
+283;Incomplete or hidden requirements;is it a requirement or not. Defect raised and development will state there is no such requirement.;Poor requirements quality (general)
+330;Incomplete or hidden requirements;loss of confidence, delays;Customer dissatisfaction
+359;Incomplete or hidden requirements;Lack of ability to listen to requirements from customers;Increased difficulty of requirements elicitation
+573;Incomplete or hidden requirements;Deployed projects that do not met requirements;Poor product quality
+649;Incomplete or hidden requirements;solution does not meet expectations;Customer dissatisfaction
+661;Incomplete or hidden requirements;Work for nothing;Implementation of irrelevant requirements
+663;Incomplete or hidden requirements;Implication to project quality and project cost;Poor product quality
+768;Incomplete or hidden requirements;incomplete requirements;Poor requirements quality (general)
+945;Incomplete or hidden requirements;Difficulties in developing requirements, delivering a software with features that do not meet the goal;Poor product quality
+947;Incomplete or hidden requirements;false/incomplete things are implemented;Poor product quality
+1064;Incomplete or hidden requirements;Project delays;Time overrun
+1066;Incomplete or hidden requirements;chaos on the project, schedule delays, cost overrun;Difficulties in project management
+1069;Incomplete or hidden requirements;covering more stakeholders;Increased communication
+1076;Incomplete or hidden requirements;Model used by the institution;NotCodable
+1194;Incomplete or hidden requirements;"grater incident resolution times; It arises the need to incorporate stabilizing iterations";Solution becomes difficult to maintain
+1331;Incomplete or hidden requirements;constant design changes and impacts in developing and testing;Increased number of change requests
+1341;Incomplete or hidden requirements;LACK OF training;NotCodable
+1349;Incomplete or hidden requirements;DEVELOPMENT do NOt Adhere to necesities;Poor product quality
+1413;Incomplete or hidden requirements;Product failures;Poor product quality
+1459;Incomplete or hidden requirements;REWORK;Rework
+1676;Incomplete or hidden requirements;this comes back to timeboxing any dependencies we have forgotten and  getting the work done , with the implication of having to come back later to properly fix or implement the previous story;Inefficient development
+1727;Incomplete or hidden requirements;LACK OF RESOURCES;Inefficient development
+1753;Incomplete or hidden requirements;For us this means  unknown requirements , which in turn will or wont be implemented (chance). Customer becomes frustrated but usually they agree that unknown requirements are hard to deliver - i.e. next sprint the requirement is known, and managed...;Incomplete Requirements
+1917;Incomplete or hidden requirements;the same as above;NotCodable
+1918;Incomplete or hidden requirements;Failure to achieve the goals.;Poor product quality
+1923;Incomplete or hidden requirements;Waste of time to redeploy requirements;Inefficient development
+1941;Incomplete or hidden requirements;Same as above;NotCodable
+1962;Incomplete or hidden requirements;"Lack of quality in implementation;";Poor product quality
+179;Inconsistent requirements;Requirements that do not work to solve the problem;Implementation of irrelevant requirements
+304;Inconsistent requirements;"misunderstanding; wrong implementation";Poor product quality
+549;Inconsistent requirements;Delivered results may not be 100% what is required leading to repeat development;Poor product quality
+754;Inconsistent requirements;no;NotCodable
+868;Inconsistent requirements;rework;Rework
+870;Inconsistent requirements;Product out of specification;Poor product quality
+879;Inconsistent requirements;Rework.;Rework
+924;Inconsistent requirements;rework;Rework
+929;Inconsistent requirements;Creation of unsuitable products;Poor product quality
+1118;Inconsistent requirements;The same above;NotCodable
+1122;Inconsistent requirements;Errors at the time of delivery and mismatch features;Poor product quality
+1239;Inconsistent requirements;lost time due to endless discussions (often after implementation) and rework;Rework
+1283;Inconsistent requirements;Delays in time to market;Time overrun
+1350;Inconsistent requirements;THE SOFTWARE DOES NOT WORK;Poor product quality
+1457;Inconsistent requirements;reworks;Rework
+1462;Inconsistent requirements;The customer is unsatisfied;Customer dissatisfaction
+1482;Inconsistent requirements;SOFTWARE DOES NOT WORK PROPERLY;Poor product quality
+1617;Inconsistent requirements;Does not help to baseline project requirements;Increased difficulty of requirements elicitation
+1805;Inconsistent requirements;problems to develop a consistent application;Poor product quality
+1810;Inconsistent requirements;Arbitrarily choosing one solution, hoping its the best one.;Increased difficulty of requirements elicitation
+425;Insufficient support by customer;Customer does not tell what he need.;Increased difficulty of requirements elicitation
+427;Insufficient support by customer;More rework required to fulfill business needs and deliver the right value;Rework
+518;Insufficient support by customer;Delays the final product;Time overrun
+539;Insufficient support by customer;lack of information when defining specifications;Increased difficulty of requirements elicitation
+676;Insufficient support by customer;deadlines are delayed;Time overrun
+856;Insufficient support by customer;response time is not good;Poor product quality
+985;Insufficient support by customer;It generates certain inconsistencies or concerns that affect the final development of the project;Poor requirements quality (general)
+997;Insufficient support by customer;delays at different stages of the project;Time overrun
+1114;Insufficient support by customer;Rework;Rework
+1291;Insufficient support by customer;"Customer will have no interest in the developed product; No precalculation possible";Customer dissatisfaction
+1354;Insufficient support by customer;FATIGUE;Overall demotivation
+1416;Insufficient support by customer;ANTICIPATED END OF CONTRACT;Customer dissatisfaction
+1419;Insufficient support by customer;LACK OF problem resolution;Decreased business value
+203;Insufficient support by project lead;I was not sure about that.;NotCodable
+278;Insufficient support by project lead;Lose sight of direction;Difficulties in project management
+468;Insufficient support by project lead;Team without motivation, which leads to a productivity decline.;Overall demotivation
+1111;Insufficient support by project lead;pressure and mistakes;Decreased manageability
+1139;Insufficient support by project lead;More responsabilities for the responsables of quality and testing;Decreased test efficiency
+1141;Insufficient support by project lead;wrong project planning;Difficulties in project management
+1171;Insufficient support by project lead;Unfamiliarity with the process;Difficulties in project management
+41;Missing traceability;Again, this simply makes the process of creating the software harder. It will have no effect on the final product.;Inefficient development
+163;Missing traceability;Customer identified needs/business level requirements not met;Missing functionality of product
+479;Missing traceability;Tool-Support;Inefficient development
+952;Missing traceability;requirements/scope not define;Project scope becomes unclear
+1097;Missing traceability;Difficulty in identifying the need for particular behavior or characterê_stic;Increased difficulty of requirements elicitation
+1406;Missing traceability;Changes are not fully performed;Increased number of change requests
+1486;Missing traceability;Difficult for new members to join and  read up ;Solution becomes more complex
+1718;Missing traceability;"problems triaging bugs; extra communication to help people understand requirements";Decreased test efficiency
+1804;Missing traceability;"No track of information; Loss of information";Missing traceability
+1933;Missing traceability;challenges in the actual deployment;Solution becomes more complex
+35;Moving targets (changing goals, business processes and / or requirements);inmature customer industry;NotCodable
+119;Moving targets (changing goals, business processes and / or requirements);frustration at timescale changse;Overall demotivation
+126;Moving targets (changing goals, business processes and / or requirements);Risk for the dev;Solution becomes more complex
+364;Moving targets (changing goals, business processes and / or requirements);"project takes twice as long as previously planned; budget increases; everybody is annoyed";Budget overrun
+437;Moving targets (changing goals, business processes and / or requirements);rework;Rework
+916;Moving targets (changing goals, business processes and / or requirements);Lack of vision of what the product should become;Decreased business value
+917;Moving targets (changing goals, business processes and / or requirements);Rework;Rework
+1006;Moving targets (changing goals, business processes and / or requirements);Unnecessary work;Inefficient development
+1010;Moving targets (changing goals, business processes and / or requirements);Missing/skipping process steps;Inefficient development
+1033;Moving targets (changing goals, business processes and / or requirements);If it is not adaptive, we are still working focused on immutable definitions from months ago and that waste the accumulated learning at every step;Rework
+1105;Moving targets (changing goals, business processes and / or requirements);Lack of test coverage;Tests are of low quality
+1266;Moving targets (changing goals, business processes and / or requirements);contract change with the implementation of new devices to the contract.;Increased number of change requests
+1279;Moving targets (changing goals, business processes and / or requirements);Potentially addressing a problem that becomes non-applicable due to technology changes;Increased number of change requests
+1290;Moving targets (changing goals, business processes and / or requirements);Longer Development and Testing;Inefficient development
+1296;Moving targets (changing goals, business processes and / or requirements);Can't achieve targets that arrive late;Project scope becomes unclear
+1454;Moving targets (changing goals, business processes and / or requirements);NONEXISTENT CLEAR GOALS;Project scope becomes unclear
+1466;Moving targets (changing goals, business processes and / or requirements);Frustration and lack of quality as things are abandoned for long periods. Wasted time and effort for things that are abandoned permanently.;Poor product quality
+1467;Moving targets (changing goals, business processes and / or requirements);cause rework;Rework
+1733;Moving targets (changing goals, business processes and / or requirements);> Development time;Time overrun
+1741;Moving targets (changing goals, business processes and / or requirements);Too little time to solve problems;Wrong estimates
+1820;Moving targets (changing goals, business processes and / or requirements);mismanagement;Difficulties in project management
+1965;Moving targets (changing goals, business processes and / or requirements);extra effort;Effort overrun
+313;Stakeholders with difficulties in separating requirements from previously known solution designs;This can result in undesired features being accidentally carried over from other projects.  In past projects development was very painful as I encountered a developer who insisted the requirements were 'wrong' because 'that's not what the software does'.;Poor requirements quality (general)
+482;Stakeholders with difficulties in separating requirements from previously known solution designs;Less efficiency ;Inefficient development
+525;Stakeholders with difficulties in separating requirements from previously known solution designs;implementing  old type  solutions;Poor (system) design quality
+912;Stakeholders with difficulties in separating requirements from previously known solution designs;Can derail workshops if not carefully managed;Increased difficulty of requirements elicitation
+928;Stakeholders with difficulties in separating requirements from previously known solution designs;We will continue with the same culture and the same problems.;Customer dissatisfaction
+1017;Stakeholders with difficulties in separating requirements from previously known solution designs;more discussion between teams to reach consensus;Increased communication
+1161;Stakeholders with difficulties in separating requirements from previously known solution designs;NEED of INDUCTION for THE newcomers;Solution becomes more complex
+1650;Stakeholders with difficulties in separating requirements from previously known solution designs;"Time; square peg in a round hole.";Time overrun
+1756;Stakeholders with difficulties in separating requirements from previously known solution designs;Too much time spent communicating to the client. Perhaps the need of a prototype to clarify, sometimes no other way than following the previous degins and delivering a less than ideal solution (e.g. subpar usability, flexibility, etc.);Increased communication
+387;Technically unfeasible requirements;Performance will be not acceptable.;Poor product quality
+987;Technically unfeasible requirements;more time required;Time overrun
+1080;Technically unfeasible requirements;High number of hours and prototyping to achieve the result closest to the desired.;Effort overrun
+1327;Technically unfeasible requirements;Bad customer relations and cost driver.;Customer dissatisfaction
+1698;Technically unfeasible requirements;REQUIREMENTS IMPOSSIBLE TO COMPLY;Solution becomes more complex
+1703;Technically unfeasible requirements;MORE inconsequential WORK;Poor product quality
+1744;Technically unfeasible requirements;Same;NotCodable
+1761;Technically unfeasible requirements;Build a solution with flexibility ;NotCodable
+76;Terminological problems;Glossary in place;NotCodable
+297;Terminological problems;Missing requirements;Incomplete Requirements
+900;Terminological problems;difficulty in the implementation of the technical solution;Inefficient development
+1011;Terminological problems;extended development cycle;Time overrun
+1426;Terminological problems;inconsistent and incomplete requirements;Incomplete Requirements
+1759;Terminological problems;misunderstandings in implementation;Inefficient development
+129;Time boxing / Not enough time in general;Reduced scope;Project scope becomes unclear
+144;Time boxing / Not enough time in general;lack of time from any team member or resource/stakeholder will cause project delays;Inefficient development
+149;Time boxing / Not enough time in general;missing milestones;Time overrun
+208;Time boxing / Not enough time in general;"more and more change requests and new requirements; cockfights between the stakeholder about the  last available resources ";Increased number of change requests
+231;Time boxing / Not enough time in general;Potentially not conforming to stakeholder needs;Decreased business value
+267;Time boxing / Not enough time in general;Quality or scope is not enough ;Poor product quality
+370;Time boxing / Not enough time in general;"scope decreases; less quality solution";Poor product quality
+446;Time boxing / Not enough time in general;delivery impact;Time overrun
+489;Time boxing / Not enough time in general;bad customer acceptance;Customer dissatisfaction
+640;Time boxing / Not enough time in general;"poorly executed development; resource bottle necks";Poor product quality
+694;Time boxing / Not enough time in general;pushing the schedule always makes the project end up taking longer to be fully complete;Time overrun
+851;Time boxing / Not enough time in general;failures or sacrificing quality;Poor product quality
+901;Time boxing / Not enough time in general;Does not prioritizes quality;Poor product quality
+910;Time boxing / Not enough time in general;Systems without the wanted quality;Poor product quality
+933;Time boxing / Not enough time in general;Errors that could be identified during the testing stage, just pass because there is no time for testing.;Poor product quality
+958;Time boxing / Not enough time in general;Product is not delivered with the expected quality;Poor product quality
+984;Time boxing / Not enough time in general;Minimalism;NotCodable
+1065;Time boxing / Not enough time in general;The solution is not as good as it should be;Poor product quality
+1079;Time boxing / Not enough time in general;Projects continue beyond the deadline;Time overrun
+1082;Time boxing / Not enough time in general;It implies cutting on additional requirements;Incomplete Requirements
+1347;Time boxing / Not enough time in general;Less features delivered or with less completeness;Missing functionality of product
+1356;Time boxing / Not enough time in general;weak RELATIONSHIP BETWEEN STAKEHOLDERS;Poor communication
+1433;Time boxing / Not enough time in general;Lack of time to complete the project;Time overrun
+1458;Time boxing / Not enough time in general;THE COST of implementation time VARIES ;Inefficient development
+1542;Time boxing / Not enough time in general;A bad image of the IT Team, perceived often as too slow, not performant, or a blocker, or incompetent, etc;Inefficient development
+1621;Time boxing / Not enough time in general;Cannot deliver a quality product;Poor product quality
+1844;Time boxing / Not enough time in general;Causes pressure in the team;Decreased manageability
+1909;Time boxing / Not enough time in general;"Poor use of resources; demotivation";Overall demotivation
+120;Unclear / unmeasurable non-functional requirements;Risk of overconstraining design;Poor (system) design quality
+259;Unclear / unmeasurable non-functional requirements;misunderstand;Poor requirements quality (general)
+310;Unclear / unmeasurable non-functional requirements;risk of unsatisfaction in the end;Customer dissatisfaction
+461;Unclear / unmeasurable non-functional requirements;"customer dissatisfaction;";Customer dissatisfaction
+819;Unclear / unmeasurable non-functional requirements;Non-compliance with requirements;Missing functionality of product
+876;Unclear / unmeasurable non-functional requirements;developers decide to change / add new technologies that end up changing the architecture;Poor requirements quality (general)
+956;Unclear / unmeasurable non-functional requirements;NP;NotCodable
+1021;Unclear / unmeasurable non-functional requirements;structural and functional errors;Poor product quality
+1039;Unclear / unmeasurable non-functional requirements;New activities included in sprints;Difficulties in project management
+1070;Unclear / unmeasurable non-functional requirements;Rework because of missing system capabilities in respect of non-functional REs;Rework
+1124;Unclear / unmeasurable non-functional requirements;"Late deliveries; wear on the analysis and testing of deliveries.";Time overrun
+1168;Unclear / unmeasurable non-functional requirements;DISCREPANCY WITH THE CUSTOMER;Customer dissatisfaction
+1187;Unclear / unmeasurable non-functional requirements;Loss of time in the sprint;Inefficient development
+1355;Unclear / unmeasurable non-functional requirements;PROBLEMS araise in the TEAM in charge of development;Conflicts within the team
+1668;Unclear / unmeasurable non-functional requirements;evidence of REQUIREMENT QUALITY  is not provided;Poor requirements quality (general)
+1670;Unclear / unmeasurable non-functional requirements;evidence of REQUIREMENT QUALITY  is not provided;Poor requirements quality (general)
+1742;Unclear / unmeasurable non-functional requirements;not knowing when requiremtns are meet;Increased difficulty of requirements elicitation
+1842;Unclear / unmeasurable non-functional requirements;"Non-compliance with implicit non-functional requiements; lack of a way to verify that the non-functional goals have been met";Untestable requirements
+1896;Unclear / unmeasurable non-functional requirements;Features that end up not solving the problem;Implementation of irrelevant requirements
+146;Underspecified requirements that are too abstract and allow for various interpretations;takes a looong time before we get things done. Lots of stuff in backlog, getting old and people forget why it is even in there;Inefficient development
+355;Underspecified requirements that are too abstract and allow for various interpretations;wrong expectations;Decreased business value
+416;Underspecified requirements that are too abstract and allow for various interpretations;cost extra Time;Effort overrun
+444;Underspecified requirements that are too abstract and allow for various interpretations;They are detected in testing;Poor requirements quality (general)
+453;Underspecified requirements that are too abstract and allow for various interpretations;redoing work;Rework
+511;Underspecified requirements that are too abstract and allow for various interpretations;Inconsistant requirements;Poor requirements quality (general)
+523;Underspecified requirements that are too abstract and allow for various interpretations;The final product is not what the client wants;Poor product quality
+710;Underspecified requirements that are too abstract and allow for various interpretations;risk of not building the right product;Implementation of irrelevant requirements
+719;Underspecified requirements that are too abstract and allow for various interpretations;Errors in the definition of functionalities;Poor requirements quality (general)
+1163;Underspecified requirements that are too abstract and allow for various interpretations;Losing time;Time overrun
+1289;Underspecified requirements that are too abstract and allow for various interpretations;Project delay and budget overrun. Expensive iterations to meet target;Time overrun
+1402;Underspecified requirements that are too abstract and allow for various interpretations;Marketing frustrated by requests for clarification;Poor communication
+1411;Underspecified requirements that are too abstract and allow for various interpretations;wrong / incomplete implementation;Poor product quality
+1560;Underspecified requirements that are too abstract and allow for various interpretations;project delays;Time overrun
+1669;Underspecified requirements that are too abstract and allow for various interpretations;NEGoTIATIon ISSUES;Difficulties in project management
+1690;Underspecified requirements that are too abstract and allow for various interpretations;Underutilization of HUMAN RESOURCES;Inefficient development
+1695;Underspecified requirements that are too abstract and allow for various interpretations;UNFINISHED PROJECTS;Poor product quality
+1763;Underspecified requirements that are too abstract and allow for various interpretations;Makes both estimation and test specification difficult and error prone.;Difficulties in project management
+1849;Underspecified requirements that are too abstract and allow for various interpretations;Risk not delivering the correct value;Implementation of irrelevant requirements
+1961;Underspecified requirements that are too abstract and allow for various interpretations;time wasted;Time overrun
+147;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;Rework;Rework
+393;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;communication overhead;Poor communication
+959;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;Reassessment of the plans too often.;Difficulties in project management
+1353;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;RE-WORK;Rework
+1417;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;nonconforming PRODUCT;Poor product quality
+1911;Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements;increased costs;Budget overrun
+81;Weak access to customer needs and / or (internal) business information;Difficulty to elicit specifics for the requirements;Increased difficulty of requirements elicitation
+377;Weak access to customer needs and / or (internal) business information;Scope creep;Project scope becomes unclear
+740;Weak access to customer needs and / or (internal) business information;Delay in the project;Time overrun
+849;Weak access to customer needs and / or (internal) business information;team without aim when making decision that could impact the business;Difficulties in project management
+990;Weak access to customer needs and / or (internal) business information;Requirements partially met or not met at all;Missing functionality of product
+1204;Weak access to customer needs and / or (internal) business information;Many more iterations than planned ;Wrong estimates
+1717;Weak access to customer needs and / or (internal) business information;LONGER IN DEVELOPMENT;Inefficient development
+1812;Weak access to customer needs and / or (internal) business information;delay and rework;Rework
+58;Weak knowledge about customer's application domain;missing information;Incomplete Requirements
+217;Weak knowledge about customer's application domain;developers develop systems based on assumptions;Poor requirements quality (general)
+485;Weak knowledge about customer's application domain;need for more analysis time;Increased difficulty of requirements elicitation
+512;Weak knowledge about customer's application domain;business value not added;Implementation of irrelevant requirements
+1014;Weak knowledge about customer's application domain;no special background information about his topic;NotCodable
+1051;Weak knowledge about customer's application domain;Unsatisfactory product;Poor product quality
+1100;Weak knowledge about customer's application domain;Rework;Rework
+1238;Weak knowledge about customer's application domain;Definition of requirements which are not fully adapted to customer needs;Poor requirements quality (general)
+1526;Weak knowledge about customer's application domain;Rework;Rework
+1663;Weak knowledge about customer's application domain;unbalance work load - team lead has most work compared to other team member;Difficulties in project management
+1791;Weak knowledge about customer's application domain;sdf;NotCodable
+865;Weak relationship between customer and project lead;"incomplete requirements; delays";Incomplete Requirements
+921;Weak relationship between customer and project lead;It has mpact on development;Inefficient development
+1012;Weak relationship between customer and project lead;Unused Features.;Implementation of irrelevant requirements
+1091;Weak relationship between customer and project lead;"Generating unnecessary friction; lack of response to the project team";Poor communication
+1229;Weak relationship between customer and project lead;the correct information is not trasmited to the team and a different product is built;Incomplete Requirements
+1343;Weak relationship between customer and project lead;the interest in his work diminishes;Overall demotivation
+1351;Weak relationship between customer and project lead;weak RELATIONSHIP BETWEEN STAKEHOLDERS;Overall demotivation
+1358;Weak relationship between customer and project lead;WEAK COMMUNICATION;Poor communication

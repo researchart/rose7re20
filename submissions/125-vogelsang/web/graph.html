@@ -1,0 +1,252 @@
+<!--
+NaPiRE trouble predictor
+Copyright (C) 2019, TU Berlin, ASET, Florian Wiesweg
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaPiRE trouble predictor: Results</title>
+  <base href="/web/">
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="stylesheet" href="external/jquery-ui/jquery-ui.css">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="graph.css">
+  <script src="external/jquery/jquery.js"></script>
+  <script src="external/jquery-ui/jquery-ui.js"></script>
+  <script src="external/plotly/plotly-latest.min.js" charset="utf-8"></script>
+  <script>
+    loading = 0;
+    function update_loading(inc) {
+        loading = loading + inc;
+        if(loading < 0) loading = 0;
+
+        if(loading == 0) $("#loading_indicator").hide();
+        else $("#loading_indicator").show();
+    }
+
+    $( function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        task_id = urlParams.get("id");
+        document.title += " for task " + task_id;
+
+        $.ajax("/tasks?printresult=true&id=" + task_id).then(function(response) {
+            query = response.query;
+
+            //$("#task").append("<tr><td></td><td class=\"filter\"></td></tr>");
+            $("#task").append("<tr><td>Task number</td><td class=\"filter\">" + response.id + "</td></tr>");
+            $("#task").append("<tr><td>Task type</td><td class=\"filter\">" + response.type + "</td></tr>");
+            $("#task").append("<tr><td>Task status</td><td class=\"filter\">" + response.state + "</td></tr>");
+            if(response.state == "FAILED") {
+                $("#task").append("<tr><td>Task error</td><td class=\"filter\"><pre style=\"text-align: left; max-width: 400px; overflow-x: scroll;\">" + response.result +"</pre></td></tr>");
+            }
+            if(response.state == "RUNNING") {
+                $("#task").append("<tr><td>Task completion</td><td class=\"filter\">" + (response.steps_done / response.steps_total * 100).toFixed(2) + "%" +"</td></tr>");
+            }
+            $("#task").append("<tr><td>Data Set</td><td class=\"filter\">" + query.dataset + "</td></tr>");
+            $("#task").append("<tr><td>Model type</td><td class=\"filter\">" + query.model + "</td></tr>");
+            $("#task").append("<tr><td>Outputs</td><td class=\"filter\">" + query.query.length + "</td></tr>");
+            $("#task").append("<tr><td>Inference</td><td class=\"filter\">" + query.inference_method + "</td></tr>");
+            $("#task").append("<tr><td>Timeout (h)</td><td class=\"filter\">" + (query.timeout).toFixed(2) + "</td></tr>");
+            $("#task").append("<tr><td>Duration (h)</td><td class=\"filter\">" + (response.elapsed_hours).toFixed(2) + "</td></tr>");
+
+            query["inference_method"] = "";
+
+            for(let node of query.nodes) {
+                $("#node_types").append("<tr><td>" + node["node_type"] + "</td><td class=\"filter\">" + node["absent_is_unknown"] + "</td><td class=\"filter\">" + (node["weighted_filter"] ? "W " : "") + node["filter"] + "</td></tr>");
+            }
+
+            for(let conn of query.connect) {
+                $("#connections").append("<tr><td>" + conn["from"] + "</td><td>" + conn["to"] + "</td><td class=\"filter\">" + (conn["weighted_filter"] ? "W " : "") + conn["filter"] + "</td></tr>");
+            }
+
+            function plotQuery() {
+                opts = {
+                    "method": "POST",
+                    "contentType": "application/json",
+                    "processData": false,
+                    "data": JSON.stringify(query)
+                };
+
+                $.ajax("/plot", opts).then( function(response) {
+                    update_loading(-1);
+                    img = new Image();
+                    img.src = response;
+                    $("#output_graph").html(img);
+                }).fail( function(response) {
+                    update_loading(-1);
+                    $("#output_graph").html(
+                        "<p>" + response.statusText + " (" +  response.status + ")<br/>"
+                        + response.responseText + "<p>");
+                });
+            }
+
+            if(response.type == "TASK_VALIDATION") {
+                plotQuery();
+                $("#task").append("<tr><td>Subjects per subsample</td><td class=\"filter\">" + query.subsample_size + "</td></tr>");
+                $("#task").append("<tr><td>Iterations</td><td class=\"filter\">" + query.iterations + "</td></tr>");
+
+                if(response.state == "DONE") {
+                    $("#metrics").show();
+                    $("#metrics_list").empty();
+
+                    metrics = [ "napire.Metrics.brier_score", "napire.Metrics.binary_accuracy", "napire.Metrics.recall", "napire.Metrics.precision" ]
+                    metrics = metrics.filter(v => response.result[v])
+                    other_metrics = Object.getOwnPropertyNames(response.result).filter(v => metrics.indexOf(v) == -1).sort();
+
+                    trace_templates = {
+                        'value': {
+                            mode: 'lines+markers',
+                            line: {
+                                color: '#1f77b4',
+                                dash: 'solid'
+                            }
+                        },
+                        'value_average': {
+                            mode: 'lines',
+                            line: {
+                                color: '#7f7f7f',
+                                dash: 'longdash'
+                            }
+                        },
+                        'baseline': {
+                            mode: 'lines+markers',
+                            line: {
+                                color: '#2cabff',
+                                dash: 'solid'
+                            }
+                        },
+                        'baseline_average': {
+                            mode: 'lines',
+                            line: {
+                                color: '#cbcbcb',
+                                dash: 'longdash'
+                            }
+                        }
+                    };
+
+                    for(let k of metrics.concat(other_metrics)) {
+                        let meta = response.result[k];
+                        let result = meta.data;
+                        let annotation = null;
+                        let repr = null;
+
+                        if(result.length == 0) {
+                            repr = "no result";
+                        } else if(result.length == 1) {
+                            annotation = result[0]["config"];
+                            repr = "<table style=\"display: block; width: 200px; margin-left: auto; margin-right: auto;\"><tbody>";
+                            repr += "<tr><td>Value</td><td>" + result[0]["value"].toFixed(4) + "</td></tr>";
+                            repr += "<tr><td>Baseline</td><td>" + result[0]["baseline"].toFixed(4) + "</td></tr>";
+                            repr += "</tbody></table>"
+                        } else {
+                            repr = "<div id=\"plot_" + k + "\"></div>";
+                            let traces = Object.keys(result[0])
+                                    .filter(dk => dk != "config")
+                                    .map(dk => {
+
+                                return $.extend({}, trace_templates[dk] ? trace_templates[dk]: {}, {
+                                    "type": "scatter",
+                                    "name": dk,
+                                    "x": result.map( xy => xy["config"]),
+                                    "y": result.map( xy => xy[dk] )
+                                });
+                            });
+                            setTimeout( () => {
+                                let layout = {
+                                    xaxis: { title: meta.data_xlabel },
+                                    yaxis: { range: meta.limits },
+                                    yaxis2: { overlaying: 'y', side: 'right', rangemode: 'tozero' }
+                                };
+
+                                Plotly.newPlot("plot_" + k, traces, layout, { responsive: true });
+                            });
+                        }
+                        $("#metrics_list").append("<h2>" + k + (annotation == null ? "": " (" + annotation + ") ") + "</h2><p style=\"text-align: center\">" + repr + "</p>");
+                    }
+                }
+            } else if(response.type == "TASK_INFERENCE") {
+                if(response.state == "DONE") {
+                    update_loading(-1);
+                    img = new Image();
+                    img.src = response.result.plot;
+                    $("#output_graph").html(img);
+                } else {
+                    plotQuery();
+                }
+            }
+        }).fail( function(response) {
+            update_loading(-1);
+            $("#output_graph").html(
+                "<p>" + response.statusText + " (" +  response.status + ")<br/>"
+                + response.responseText + "<p>");
+        });
+        update_loading(+1);
+
+    });
+  </script>
+</head>
+<body>
+
+<div id="main">
+
+<h1>Task settings</h1>
+
+<table>
+<thead>
+    <tr>
+        <th style="width: 180px">Setting</th><th class="filter" style="width: 350px">Value</th>
+    </tr>
+</thead>
+<tbody id="task">
+</tbody>
+</table>
+
+<h1>Architecture</h1>
+
+<p id="loading_indicator">Loading...</p>
+<div id="output_graph">
+</div>
+
+<table style="margin-top: 40px">
+<thead>
+    <th style="width: 319px">Node types</th><th>0 = ?</th><th class="filter" style="width: 106px">Filter</th>
+</thead>
+<tbody id="node_types">
+</tbody>
+</table>
+
+<table style="margin-top: 40px">
+<thead>
+    <th style="width: 154px">From</th><th style="width: 154px">To</th><th class="filter" style="width: 106px">Filter</th>
+</thead>
+<tbody id="connections">
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div id="metrics" style="display: none">
+<h1>Metrics</h1>
+<ul id="metrics_list">
+</ul>
+</div>
+
+</body>
+</html>

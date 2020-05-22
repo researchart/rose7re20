@@ -1,0 +1,155 @@
+<div class="container" *ngIf="!loaded">
+<mat-progress-bar mode="indeterminate" style="margin-top: 200px; margin-left: 50px; margin-right: 50px; width: calc(100% - 100px)"></mat-progress-bar>
+<div class="loading-message">Loading NaPiRE data and Bayesian networks...</div>
+</div>
+
+<div class="container" fxLayout="row wrap" *ngIf="loaded">
+<div class="input-form" fxFlex="1 1 60%" fxFlex.lt-lg="1 1 100%" style="margin-top: 20px">
+
+<div class="table">
+  <div>
+    <div><mat-label>Analysis type</mat-label></div>
+    <div>
+      <mat-select (selectionChange)="updateModel($event.value)" [value]="model_id">
+        <mat-option *ngFor="let it of MODEL_DEFINITIONS" [value]="it">
+          {{ it }}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+  <div *ngIf="items.items['CONTEXT_DISTRIBUTED'].length > 0">
+    <div><mat-label>Distributed project</mat-label></div>
+    <div class="center"><mat-slide-toggle (change)="setEvidence('CONTEXT_DISTRIBUTED_00', $event.checked)"></mat-slide-toggle></div>
+  </div>
+  <div *ngIf="items.items['CONTEXT_SIZE'].length > 0">
+    <div><mat-label>Project team size</mat-label></div>
+    <div><mat-slider *ngIf="descriptions != null" min="-1" max="5" step="1" value="-1" thumbLabel tickInterval="1" [displayWith]="sliderDisplayWith()" (change)="setSliderEvidence($event.value)"></mat-slider></div>
+  </div>
+  <div *ngIf="items.items['CONTEXT_DEV_METHOD'].length > 0">
+    <div><mat-label>Development paradigm</mat-label></div>
+    <div>
+      <mat-select (selectionChange)="setExclusiveEvidence('CONTEXT_DEV_METHOD', $event.value, undefined)" value="">
+        <mat-option value="">Unknown</mat-option>
+        <mat-option *ngFor="let it of items.items['CONTEXT_DEV_METHOD']" [value]="it">
+          {{ descriptions[it] }}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+  <div *ngIf="items.items['CONTEXT_TYPE'].length > 0">
+    <div><mat-label>System type</mat-label></div>
+    <div>
+      <mat-select (selectionChange)="setExclusiveEvidence('CONTEXT_TYPE', $event.value, undefined)" value="">
+        <mat-option value="">Unknown</mat-option>
+        <mat-option *ngFor="let it of items.items['CONTEXT_TYPE']" [value]="it">
+          {{ descriptions[it] }}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+  <div *ngIf="items.items['CONTEXT_RELATIONSHIP'].length > 0">
+    <div><mat-label>Customer relationship</mat-label></div>
+    <div>
+      <mat-select (selectionChange)="setExclusiveEvidence('CONTEXT_RELATIONSHIP', $event.value, undefined)" value="">
+        <mat-option value="">Unknown</mat-option>
+        <mat-option *ngFor="let it of items.items['CONTEXT_RELATIONSHIP']" [value]="it">
+          {{ descriptions[it] }}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+</div>
+
+<mat-tab-group mat-stretch-tabs>
+  <ng-template ngFor let-its [ngForOf]="items.items | keyvalue">
+    <mat-tab *ngIf="generic_categories[its.key]" [label]="descriptions[its.key]">
+      <div class="toggle-container" fxLayout="row wrap">
+        <mat-slide-toggle *ngFor="let it of its.value" fxFlex="0 1 300px" [matTooltip]="descriptions[it]"
+ [matTooltipShowDelay]="1000" (change)="setEvidence(it, $event.checked)">{{descriptions[it]}}</mat-slide-toggle>
+      </div>
+    </mat-tab>
+  </ng-template>
+</mat-tab-group>
+
+<button *ngIf="!running" mat-raised-button style="display: block; width: 250px; margin-top: 40px; margin-left: auto; margin-right: auto" color="primary" (click)="run()">Run your personal analysis</button>
+
+</div>
+
+<div class="ranking" fxFlex="1 1 40%" fxFlex.lt-lg="1 1 100%" style="margin-top: 20px; padding-left: 50px; padding-right: 50px;">
+<mat-progress-bar *ngIf="running" mode="indeterminate" style="margin-top: 200px; margin-left: 50px; margin-right: 50px; width: calc(100% - 100px)"></mat-progress-bar>
+<div *ngIf="running" class="loading-message">Please lean back and relax. The analysis will take a minute or two.</div>
+
+
+<div *ngIf="!running && task_result != null">
+
+<mat-accordion displayMode="flat">
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>Analysis results</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="explanation">{{ model_explanation }}</div>
+
+  <table mat-table [dataSource]="showall ? task_result : task_shortresult" style="width: 100%">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element" style="width: 75px"> {{ element[0] }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{ element[1] }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="percentage">
+      <th mat-header-cell *matHeaderCellDef style="text-align: right;"> Probability </th>
+      <td mat-cell *matCellDef="let element" style="width: 100px; text-align: right"> {{ element[2] }}% </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="['position', 'description', 'percentage']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['position', 'description', 'percentage'];"></tr>
+  </table>
+
+  <div style="margin-top: 15px; width: 100%; text-align: center">
+    <button mat-button *ngIf="!showall" (click)="showall = true">Show more</button>
+    <button mat-button *ngIf="showall" (click)="showall = false">Show less</button>
+  </div>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Causal structure </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="explanation">The following causal structure has been used to infer the above results. Click to zoom.</div>
+  <div style="text-align: center"><a (click)="showFullImage()" style="cursor: pointer; display: block; width: 100%;"><img style="max-width: 100%; max-height: 250px" [src]="plot"/></a></div>
+</mat-expansion-panel>
+
+<mat-expansion-panel *ngIf="model_validation">
+  <mat-expansion-panel-header>
+    <mat-panel-title>Performance metrics</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="explanation">To view the pre-computed performance characteristics of your analysis type, please choose at least one indicator. They were calculated using 20&#x2011;fold cross&#x2011;validation.</div>
+
+  <div style="text-align: center">
+    <mat-button-toggle-group multiple [(value)]="visible_validations">
+      <mat-button-toggle *ngFor="let metric of model_validation_keys" [value]="metric">{{metric_name(metric)}}</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngFor="let metric of model_validation_keys">
+    <plotly-plot *ngIf="visible_validations.indexOf(metric) >= 0" [data]="validationData(metric).data" [layout]="validationData(metric).layout" [style]="{'width': '100%'}" [useResizeHandler]="true" [config]="{ scrollZoom: false, displayModeBar: false }"></plotly-plot>
+  </div>
+</mat-expansion-panel>
+</mat-accordion>
+
+</div>
+
+</div>
+</div>

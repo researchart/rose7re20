@@ -1,0 +1,22 @@
+name = "napire"
+uuid = "6094d44a-40d9-11e9-15c0-eb5fb323cc95"
+authors = ["Florian Wiesweg <f.wiesweg@tu-berlin.de>"]
+version = "0.1.0"
+
+[deps]
+Arpack = "7d9fca2a-8960-54d3-9f78-7d1dccf2cb97"
+Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
+BayesNets = "ba4760a4-c768-5bed-964b-cf806dc591cb"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+LRUCache = "8ac3fa9e-de4c-5943-b1dc-09c6b5f20637"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Serialization = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+SharedArrays = "1a1011a3-84de-559e-8e89-a11a2f7dc383"
+Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"

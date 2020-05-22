@@ -1,0 +1,53 @@
+Effect,Id
+Budget overrun,132
+Conflicts with the customer,133
+Conflicts within the customer,134
+Conflicts within the team,135
+Customer dissatisfaction,136
+Decreased business value,137
+Decreased efficiency (overall),138
+Decreased manageability,139
+Decreased test efficiency,140
+Decreased user acceptance,141
+Delayed detection of bugs and failures,142
+Delayed detection of missing functions,143
+Difficulties in project management,144
+Effort overrun,145
+Implementation of irrelevant requirements,146
+Incomplete Requirements,147
+Increased communication,148
+Increased complexity in RE,149
+Increased difficulty of impact analyses,150
+Increased difficulty of requirements elicitation,151
+Increased maintenance costs,152
+Increased number of change requests,153
+Increased number of failures / bugs,154
+Increased number of requirements changes,155
+Inefficient development,156
+Information gets lost,157
+Lack of innovation,158
+Late decision,159
+Less time left for RE,160
+Missing engagement by customer,161
+Missing functionality of product,162
+Missing traceability,163
+Misunderstanding (overall),164
+Need for support by a more experienced developer,165
+Overall demotivation,166
+Poor (system) design quality,167
+Poor communication,168
+Poor documentation of requirements,169
+Poor product quality,170
+Poor requirements quality (general),171
+Project scope becomes unclear,172
+Rework,173
+Solution becomes difficult to maintain,174
+Solution becomes more complex,175
+Tests are of low quality,176
+Time overrun,177
+Unexpected non-functional requirements,178
+Untestable requirements,179
+Validation of requirements becomes difficult,180
+Weak knowledge transfer,181
+Wrong estimates,182
+Wrong sizing of hardware,183

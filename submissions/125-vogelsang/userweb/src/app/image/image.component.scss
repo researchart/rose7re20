@@ -1,0 +1,16 @@
+.explanation {
+  color: rgba(0, 0, 0, 0.54);
+
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.img-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 50px);
+  text-align: center;
+
+  margin-bottom: 20px
+}

@@ -1,0 +1,794 @@
+<!--
+NaPiRE trouble predictor
+Copyright (C) 2019, TU Berlin, ASET, Florian Wiesweg
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaPiRE trouble predictor</title>
+  <base href="/web/">
+  <link rel="stylesheet" href="external/jquery-ui/jquery-ui.css">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="shortcut icon" href="./favicon.ico">
+  <script src="external/jquery/jquery.js"></script>
+  <script src="external/jquery-ui/jquery-ui.js"></script>
+  <script>
+    initial_params = {
+        "dataset": "",
+        "nodes": [],
+        "connect": [],
+        "query": [],
+        "evidence": {},
+        "inference_method": "",
+        "max_parents": 0
+    };
+    params = Object.assign({}, initial_params);
+
+    items = {};
+    edges = {};
+    loading = 0;
+
+    function post(url, overwrites, noload_params) {
+        if(!overwrites) overwrites = {};
+
+        let query_dict = {};
+        if(!noload_params) {
+            query_dict = $.extend(query_dict, params);
+        }
+        query_dict = $.extend(query_dict, overwrites);
+
+        return $.ajax(url, {
+                "method": "POST",
+                "contentType": "application/json",
+                "processData": false,
+                "data": JSON.stringify(query_dict)
+        });
+    }
+
+    function load_architecture_params(init) {
+        let connectivity = Object.getOwnPropertyNames(items);
+        connectivity.sort();
+
+        //
+        // update node types form
+        //
+
+        $("#connectivity_available").empty()
+        for(let i of connectivity) {
+            $("#connectivity_available").append("<li>" + i + "</li>");
+        }
+
+        function removeSuperfluousChildren(id, maxcount) {
+            let counter = 0;
+            for(let ch of $(id).children()) {
+                ch = $(ch);
+                if(counter >= maxcount) {
+                    ch.remove();
+                }
+
+                counter++;
+            }
+            return counter;
+        }
+
+        let num_nodesweight = 0;
+        num_nodesweight = removeSuperfluousChildren("#connectivity_nodesweight", connectivity.length);
+        num_nodesweight = removeSuperfluousChildren("#connectivity_nodesweightedfilter", connectivity.length);
+        num_nodesweight = removeSuperfluousChildren("#connectivity_nodesunknown", connectivity.length);
+
+        let initialFilters;
+        try {
+            initialFilters = window.localStorage.getItem("filters") ? JSON.parse(window.localStorage.getItem("filters")) : {};
+        } catch(e) {
+            initialFilters = {};
+        }
+
+        for(; num_nodesweight < connectivity.length; num_nodesweight++) {
+            let mw_id = "nodes_min_weight_" + connectivity[num_nodesweight];
+            !(mw_id in initialFilters) && (initialFilters[mw_id] = 5);
+            $("#connectivity_nodesweight").append("<input id=\"" + mw_id + "\" class=\"min_weight\"" +
+                " type=\"number\" min=\"0\" value=\"" + initialFilters[mw_id] + "\" name=\"" + mw_id + "\"/>");
+            $("#" + mw_id).change( (function(type, mw) { return function(event) {
+                let val = parseInt($("#" + mw).val());
+                params["nodes"][type]["filter"] = val;
+                initialFilters[mw] = val;
+                window.localStorage.setItem("filters", JSON.stringify(initialFilters));
+            }}) (num_nodesweight, mw_id));
+
+            mw_id = "nodes_min_weight_weighted_" + connectivity[num_nodesweight];
+            !(mw_id in initialFilters) && (initialFilters[mw_id] = false);
+            $("#connectivity_nodesweightedfilter").append("<input id=\""+ mw_id + "\" type=\"checkbox\" class=\"min_weight\"/>");
+            $("#" + mw_id).change( (function(type, mw) { return function(event) {
+                let val = $("#" + mw)[0].checked;
+                params["nodes"][type]["weighted_filter"] = $("#" + mw)[0].checked;
+                initialFilters[mw] = val;
+                window.localStorage.setItem("filters", JSON.stringify(initialFilters));
+            }})(num_nodesweight, mw_id));
+            $("#" + mw_id)[0].checked = initialFilters[mw_id];
+
+            mw_id = "nodes_unknown_" + connectivity[num_nodesweight];
+            !(mw_id in initialFilters) && (initialFilters[mw_id] = false);
+            $("#connectivity_nodesunknown").append("<input id=\""+ mw_id + "\" type=\"checkbox\" class=\"min_weight\"/>");
+            $("#" + mw_id).change( (function(type, mw) { return function(event) {
+                let val = $("#" + mw)[0].checked;
+                params["nodes"][type]["absent_is_unknown"] = $("#" + mw)[0].checked;
+                initialFilters[mw] = val;
+                window.localStorage.setItem("filters", JSON.stringify(initialFilters));
+            }})(num_nodesweight, mw_id));
+            $("#" + mw_id)[0].checked = initialFilters[mw_id];
+        }
+
+        $("#connectivity_nodesnumber").empty();
+        for(let i of connectivity) {
+            $("#connectivity_nodesnumber").append("<input type=\"number\" readonly class=\"min_weight\" value=\"" + items[i].length + "\"/>");
+        }
+
+        // load data from form
+        let nodes = [];
+        for(let i of connectivity) {
+            nodes.push({
+                node_type: i,
+                filter: parseInt($("#nodes_min_weight_" + i).val()),
+                weighted_filter: $("#nodes_min_weight_weighted_" + i)[0].checked,
+                absent_is_unknown: $("#nodes_unknown_" + i)[0].checked
+            });
+        }
+        params["nodes"] = nodes;
+
+        //
+        // update edges form
+        //
+        params["max_parents"] = parseInt($("#max_parents").val());
+
+        // load data from form
+        let from_keys = [];
+        for(let ch of $("#connectivity_from").children()) {
+            ch = $(ch)
+            from_keys.push(ch.text());
+        }
+
+        let to_keys = [];
+        for(let ch of $("#connectivity_to").children()) {
+            ch = $(ch)
+            to_keys.push(ch.text());
+        }
+
+        let connect = [];
+        for(let i = 0; i < Math.min(from_keys.length, to_keys.length); i++) {
+            let mw_val = parseInt($("#edges_min_weight_" + i).val());
+            let mv_valweighted = $("#edges_min_weight_weighted_" + i)[0];
+            mv_valweighted = mv_valweighted ? mv_valweighted.checked : false;
+
+            connect.push({
+                from: from_keys[i],
+                to: to_keys[i],
+                filter: isNaN(mw_val) ? 15 : mw_val,
+                weighted_filter: mv_valweighted,
+            });
+        }
+        params["connect"] = connect;
+        window.localStorage.setItem("connectivity", JSON.stringify(connect));
+
+        let num_edgesweight = Math.min(from_keys.length, to_keys.length);
+        let num_edgesweight_found = 0;
+        num_edgesweight_found = removeSuperfluousChildren("#connectivity_edgesweight", num_edgesweight);
+        num_edgesweight_found = removeSuperfluousChildren("#connectivity_edgesweight_weighted", num_edgesweight);
+
+        for(; num_edgesweight_found < num_edgesweight; num_edgesweight_found++) {
+            let mw_id = "edges_min_weight_" + num_edgesweight_found;
+            !(mw_id in initialFilters) && (initialFilters[mw_id] = 15);
+            $("#connectivity_edgesweight").append("<input id=\"" + mw_id + "\" class=\"min_weight\"" +
+                " type=\"number\" min=\"0\" value=\"" + initialFilters[mw_id] + "\" name=\"" + mw_id + "\"/>");
+            $("#" + mw_id).change( (function(type, mw) { return function(event) {
+                let val = parseInt($("#" + mw).val());
+                params["connect"][type]["filter"] = val;
+                initialFilters[mw] = val;
+                window.localStorage.setItem("filters", JSON.stringify(initialFilters));
+            }})(num_edgesweight_found, mw_id));
+
+            mw_id = "edges_min_weight_weighted_" + num_edgesweight_found;
+            !(mw_id in initialFilters) && (initialFilters[mw_id] = false);
+            $("#connectivity_edgesweight_weighted").append("<input id=\"" + mw_id + "\" class=\"min_weight\"" +
+                " type=\"checkbox\" name=\"" + mw_id + "\"/>");
+            $("#" + mw_id).change( (function(type, mw) { return function(event) {
+                let val = $("#" + mw)[0].checked;
+                params["connect"][type]["weighted_filter"] = val;
+                initialFilters[mw] = val;
+                window.localStorage.setItem("filters", JSON.stringify(initialFilters));
+            }})(num_edgesweight_found, mw_id));
+            $("#" + mw_id)[0].checked = initialFilters[mw_id];
+        }
+
+        $("#connectivity_edgesnumber").empty();
+        for(let edge_type of params['connect']) {
+            let from_type = edge_type["from"];
+            let to_type = edge_type["to"];
+
+            let edge_num = 0;
+            for(let fr of ( items[from_type] || [] )) {
+                for(let to of (items[to_type] || [] )) {
+                    edge_num += edges[":" + fr + " => :" + to] ? 1 :  0;
+                }
+            }
+
+            $("#connectivity_edgesnumber").append("<input type=\"number\" readonly class=\"min_weight\" value=\"" + edge_num + "\"/>");
+        }
+    }
+
+    function load_evidence_params(category_drag) {
+        let data = {};
+
+        function update(list, value) {
+            list = $(list);
+
+            for(let item of list.children()) {
+                item = $(item).text();
+                if(items[item]) {
+                    for(let subitem of items[item]) {
+                        if(!data[subitem]) { // do not overwrite if already present individually
+                            data[subitem] = value;
+                        }
+                    }
+                } else {
+                    data[item] = value; // do overwrite if already present by category
+                }
+            }
+        }
+
+        update("#evidence_true", true);
+        update("#evidence_false", false);
+        update("#evidence_output", null);
+
+        params["evidence"] = {};
+        params["query"] = [];
+        for(let item in data) {
+            if(data[item] === null) {
+                params["query"].push(item);
+            } else {
+                params["evidence"][item] = data[item];
+            }
+        }
+
+        $("#run_inference") .prop("disabled", params["query"].length <= 0);
+        $("#run_validation").prop("disabled", params["query"].length <= 0);
+    }
+
+    function adjust_evidence_view() {
+        let evidence = [];
+        for(let type in items) {
+            if(items[type].length > 0) {
+                evidence.push(type);
+                evidence.push.apply(evidence, items[type]);
+            }
+        }
+
+        function update(list) {
+            list = $(list);
+
+            let contained = []
+            for(let ch of list.children()) {
+                ch = $(ch);
+                match = false;
+                for(let e of evidence) {
+                    match = match || (ch.text() === e);
+                }
+
+                if(!match) {
+                    ch.remove();
+                } else {
+                    contained.push(ch.text());
+                }
+            }
+
+            return contained;
+        }
+
+        let contained = update("#evidence_false");
+        contained = contained.concat(update("#evidence_true"));
+        contained = contained.concat(update("#evidence_output"));
+
+        for(let c of contained) {
+            let idx = evidence.indexOf(c);
+            if(idx >= 0) {
+                evidence.splice(idx, 1);
+            }
+        }
+
+        evidence.sort();
+        $("#evidence_unknown").empty();
+        for(let e of evidence) {
+            $("#evidence_unknown").append("<li>" + e + "</li>");
+        }
+
+        load_evidence_params();
+    }
+
+    function adjust_loading_indicator(inc) {
+        loading = loading + inc;
+        if(loading < 0) loading = 0;
+
+        if(loading == 0) {
+            $("#update_graph").prop("disabled", false);
+            $("#loading_indicator").hide();
+        } else {
+            $("#update_graph").prop("disabled", true);
+            $("#loading_indicator").show();
+        }
+    }
+
+    function update_graph(init) {
+        if(init) {
+            let initialConnectivity = window.localStorage.getItem("connectivity");
+            try {
+                initialConnectivity = initialConnectivity ? JSON.parse(initialConnectivity) : null;
+            } catch(e) {
+                initialConnectivity = null;
+            }
+            if(!initialConnectivity) {
+                initialConnectivity = [{
+                    from: "PROBLEMS_CODE", to: "EFFECTS_CODE"
+                }, {
+                    from: "CAUSES_CODE", to: "PROBLEMS_CODE"
+                }];
+            }
+
+            for(let edge of initialConnectivity) {
+                $("#connectivity_from").append("<li>" + edge.from + "</li>");
+                $("#connectivity_to").append("<li>" + edge.to + "</li>");
+            }
+        }
+        load_architecture_params(); // load params from the just-changed ui
+
+        adjust_loading_indicator(+1);
+        post("/items").then(function(response) {
+            adjust_loading_indicator(-1);
+
+            items = response.items;
+            edges = response.edges;
+
+            load_architecture_params(); // insert stuff from the newly loaded items to the UI
+            adjust_evidence_view();
+
+            if(init) {
+                setTimeout(update_graph);
+                setTimeout(update_tasks);
+                setInterval(update_tasks, 10000);
+            }
+        }).fail( function(response) {
+            adjust_loading_indicator(-1);
+        });
+
+        adjust_loading_indicator(+1);
+        post("/descriptions?all_items=true").then(function(descriptions) {
+            adjust_loading_indicator(-1);
+
+            let types = Object.getOwnPropertyNames(items);
+            types.sort();
+            $("#codes").empty();
+
+            for(type of types) {
+                let codes = items[type];
+                codes.sort();
+
+                if(codes.length == 0) {
+                    continue;
+                }
+
+
+                let tcells="";
+                for(let c of codes) {
+                    tcells += "<tr><td class=\"codes-code\">" + c + "</td><td class=\"codes-description\">" + descriptions[c] + "</td></tr>";
+                }
+
+                $("#codes").append("<h2>" + type + "</h2><table><thead><th>Code</th><th>Description</th></thead><tbody>" + tcells + "</tbody></table>");
+            }
+        }).fail( function(response) {
+            adjust_loading_indicator(-1);
+        });
+
+        adjust_loading_indicator(+1);
+        post("/plot")
+            .then( function(response) {
+                adjust_loading_indicator(-1);
+
+                let img = new Image();
+                img.src = response;
+                $("#output_graph").html(img);
+            }).fail( function(response) {
+                adjust_loading_indicator(-1);
+
+                $("#output_graph").html(
+                    "<p>" + response.statusText + " (" +  response.status + ")<br/>"
+                    + response.responseText + "<p>");
+            });
+    }
+
+    function update_tasks() {
+        return $.ajax("/tasks")
+            .then( function(response) {
+                $("#output_tasks").empty();
+                if(response.length == 0) {
+                    $("#no_tasks_indicator").html("<p>No task run so far.</p>");
+                } else {
+                    $("#no_tasks_indicator").html("");
+                    for(let task of response) {
+                        let task_description = "<a href=\"javascript:graph_window = window.open('graph.html?id=" + task.id +"', '_blank', 'width=700,height=850'); void(0)\">" + task.type + "</a>" + ": ";
+
+                        if(task.type == "TASK_VALIDATION") {
+                            task_description += task.query.subsample_size + " subjects per subsample, " + task.query.iterations + " iterations, "
+                        }
+
+                        task_description += task.state.toLowerCase() + ". ";
+                        if(task.state == "RUNNING") {
+                            task_description += "(" + (task.steps_done / task.steps_total * 100).toFixed(2) + "%). ";
+                            task_description += "<a href=\"javascript:$.ajax('/tasks?id=" + task.id + "', { 'method': 'POST' }); update_tasks(); void(0)\">cancel</a>";
+                        } else {
+                            task_description += "<a href=\"javascript:$.ajax('/tasks?id=" + task.id + "', { 'method': 'DELETE' }); update_tasks(); void(0)\">delete</a> ";
+                            task_description += "<a href=\"javascript:run_type('" + task.type + "', " + JSON.stringify(task.query).replace(/\\n/g, '').replace(/"/g, "'") + ", true); void(0)\">re-run as is</a> ";
+                            task_description += "<a href=\"javascript:run_type('TASK_INFERENCE', " + JSON.stringify(task.query).replace(/\\n/g, '').replace(/"/g, "'") + "); void(0)\">re-run (new inference)</a> ";
+                            task_description += "<a href=\"javascript:run_type('TASK_VALIDATION', " + JSON.stringify(task.query).replace(/\\n/g, '').replace(/"/g, "'") + "); void(0)\">re-run (new validation)</a>";
+                        }
+
+                        $("#output_tasks").append("<li value=\"" + task.id + "\">" + task_description + "</li>");
+                    }
+                }
+            });
+    }
+
+    function run_type(type, query, keep_inference_params) {
+        if(type == "TASK_VALIDATION") {
+            run_validation(query, keep_inference_params);
+        } else if(type == "TASK_INFERENCE") {
+            run_inference(query, keep_inference_params);
+        } else {
+            throw "Unknown task type";
+        }
+    }
+
+    function run_inference(query, keep_inference_params) {
+        let overwrites;
+        if(!query) {
+            overwrites = { "model": $("#model").val() };
+        } else {
+            overwrites = query;
+        }
+
+        if(!keep_inference_params) {
+            overwrites["inference_method"] = $("#inference_method").val();
+            overwrites["timeout"] = parseFloat($("#timeout").val());
+        }
+        overwrites["plot"] = true;
+
+        $("#run_inference").prop("disabled", true);
+        post("/infer", overwrites, query).then( function(response) {
+            update_tasks().then(function(response) {
+                    $("#run_inference").prop("disabled", false);
+                }).fail(function(response) {
+                    $("#run_inference").prop("disabled", false)
+                });
+        }).fail(function(response) {
+            alert(response.responseText);
+            $("#run_inference").prop("disabled", false)
+        });
+    }
+
+    function run_validation(query, keep_inference_params) {
+        let overwrites;
+        if(!query) {
+            overwrites = { "model": $("#model").val() };
+        } else {
+            overwrites = query;
+        }
+
+        if(!keep_inference_params) {
+            overwrites["inference_method"] = $("#inference_method").val();
+            overwrites["subsample_size"] = parseInt($("#validation_subsample_size").val());
+            overwrites["iterations"] = parseInt($("#validation_iterations").val());
+            overwrites["timeout"] = parseFloat($("#timeout").val());
+            overwrites["workers"] = parseInt($("#validation_workers").val());
+        }
+
+        $("#run_validation").prop("disabled", true);
+        post("/validate", overwrites, query).then( function(response) {
+            update_tasks().then(function(response) {
+                    $("#run_validation").prop("disabled", false);
+                }).fail(function(response) {
+                    $("#run_validation").prop("disabled", false)
+                });
+        }).fail(function(response) {
+            alert(response.responseText);
+            $("#run_validation").prop("disabled", false)
+        });
+    }
+
+    $( function() {
+
+    for(let i of [ "#connectivity_from", "#connectivity_to", "#connectivity_available" ]) {
+        $(i).sortable({
+            connectWith: "ul.connectivity_drop",
+            stop: function(event, ui) { load_architecture_params(); },
+            revert: 200
+        });
+    }
+
+    for(let i of [ "#evidence_unknown", "#evidence_true", "#evidence_false", "#evidence_output" ]) {
+        $(i).sortable({
+            connectWith: "ul.evidence_drop",
+            stop: function(event, ui) { load_evidence_params(); },
+            revert: 200
+        });
+    }
+
+    Promise.all([
+        $.ajax("/datasets").then(function(response) {
+            var dataset = window.localStorage.getItem("dataset");
+            for(let ds of response) {
+                $("#dataset").append("<option value=\"" + ds + "\">" + ds + "</option>");
+            }
+            $("#dataset").val(dataset ? dataset : response[0]);
+            params["dataset"] = $("#dataset").val();
+
+            $("#dataset").change(function() {
+                params = Object.assign({}, initial_params);
+                params["dataset"] = $("#dataset").val();
+                window.localStorage.setItem("dataset", params["dataset"]);
+                items = {};
+                edges = {};
+                update_graph();
+            });
+        }),
+
+        $.ajax("/inference").then(function(response) {
+            response.sort();
+            for(let method of response) {
+                $("#inference_method").append("<option value=\"" + method + "\">" + method + "</option>");
+            }
+            $("#inference_method").val(response[1]);
+        }),
+
+
+        $.ajax("/models").then(function(response) {
+            for(let model of response) {
+                $("#model").append("<option value=\"" + model + "\">" + model + "</option>");
+            }
+        }) ]).then(function() { update_graph(true) });
+
+    });
+  </script>
+</head>
+<body>
+
+<div id="setup">
+
+<h1>Architecture</h1>
+
+<div class="button_container" style="width: 500px">
+<select id="dataset" name="dataset"></select>
+<button type="button" style="width: 200px;" onclick="$('#codes_container').toggle()">Show/hide descriptions</button>
+</div>
+
+<table>
+<thead>
+<th>Available node types</th><th>0 = ?</th><th>W</th><th>Filter</th><th>#</th>
+</thead>
+<tbody>
+
+<td>
+<ul id="connectivity_available" class="connectivity_drop">
+</ul>
+</td>
+
+<td id ="connectivity_nodesunknown">
+</td>
+
+<td id="connectivity_nodesweightedfilter">
+</td>
+
+<td id="connectivity_nodesweight">
+</td>
+
+<td id="connectivity_nodesnumber">
+</td>
+
+</tbody>
+</thead>
+
+<div class="settings_container">
+
+<div class="settings_row">
+<div class="settings_cell">
+<label for="model">Maximum parents per node</label>
+</div>
+
+<div class="settings_cell">
+<input id="max_parents" type="number" min="0" value="0"></input>
+</div>
+</div>
+
+</div>
+
+<table>
+<thead>
+    <th>From</th><th>To</th><th>W</th><th>Filter</th><th>#</th>
+</thead>
+<tbody>
+<tr>
+<td>
+<ul id="connectivity_from" class="connectivity_drop">
+</ul>
+
+<td>
+<ul id="connectivity_to" class="connectivity_drop">
+</ul>
+</td>
+
+<td id="connectivity_edgesweight_weighted">
+</td>
+
+<td id="connectivity_edgesweight">
+</td>
+
+<td id="connectivity_edgesnumber">
+</td>
+</tr>
+</tbody>
+</table>
+
+<div class="button_container">
+<button id="update_graph"  type="button" onclick="update_graph()">Update graph</button>
+</div>
+
+<h1>Inference</h1>
+
+<div class="settings_container">
+
+<div class="settings_row">
+<div class="settings_cell">
+<label for="model">Model type</label>
+</div>
+
+<div class="settings_cell">
+<select id="model" name="model">
+</select>
+</div>
+</div>
+
+<div class="settings_row">
+<div class="settings_cell">
+<label for="inference_method">Inference method</label>
+</div>
+
+<div class="settings_cell">
+<select id="inference_method" name="inference_method">
+</select>
+</div>
+</div>
+
+<div class="settings_row">
+<div class="settings_cell">
+<label for="validation_subsample_size">Validation subsample size</label>
+</div>
+
+<div class="settings_cell">
+<input id="validation_subsample_size" name="validation_subsample_size" type="number" min="1" value="30"/>
+</div>
+</div>
+
+<div class="settings_row">
+<div class="settings_cell">
+<label for="validation_iterations">Validation iterations</label>
+</div>
+
+<div class="settings_cell">
+<input id="validation_iterations" name="validation_iterations" type="number" min="1" value="10"/>
+</div>
+</div>
+
+<div class="settings_row">
+<div class="settings_cell">
+<label for="validation_workers">Validation workers</label>
+</div>
+
+<div class="settings_cell">
+<input id="validation_workers" name="validation_workers" type="number" min="1" value="12"/>
+</div>
+</div>
+
+<div class="settings_row">
+<div class="settings_cell">
+<label for="timeout">Timeout (h)</label>
+</div>
+
+<div class="settings_cell">
+<input id="timeout" name="timeout" type="number" min="0" value="24" step="0.001"/>
+</div>
+</div>
+
+</div>
+
+<div class="button_container">
+<button id="run_inference"  type="button" onclick="run_inference()" disabled>Start inference</button>
+<button id="run_validation" type="button" onclick="run_validation()" disabled>Start validation</button>
+</div>
+
+<ul id="evidence_unknown" class="evidence_drop">
+</ul>
+
+<p class="hint">Hint: if you run out of memory, reduce the number of output variables.</p>
+
+<table>
+<thead>
+    <th>Absent</th><th>Present</th><th>Output</th>
+</thead>
+<tbody>
+<tr>
+
+<td>
+<ul id="evidence_false" class="evidence_drop">
+</ul>
+</td>
+
+<td>
+<ul id="evidence_true" class="evidence_drop">
+</ul>
+</td>
+
+<td>
+<ul id="evidence_output" class="evidence_drop">
+</ul>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<div id="codes_container" style="display: none">
+<h1>Codes</h1>
+
+<div id="codes">
+</div>
+</div>
+
+<div id="result">
+
+<h1>Graph</h1>
+<button class="centered_button" onclick="$('#legend').toggle()">Show/hide legend</button>
+<img id="legend" style="display: none;" src="../query_legend"></img>
+
+<p id="loading_indicator">Loading...</p>
+
+
+<div id="output_graph">
+</div>
+
+<h1>Results</h1>
+
+<div id="no_tasks_indicator"></div>
+
+<ol id="output_tasks">
+
+</ol>
+
+</div>
+
+</body>
+</html>

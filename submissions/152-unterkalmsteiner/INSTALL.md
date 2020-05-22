@@ -12,5 +12,15 @@ The source code of INCEpTION and our extension can be found in `inception-src.ta
 3. point your browser to `http://localhost:18080/inception-app-webapp/`. 
 4. login with username `admin` and password `ccr2020`. 
 
+#### Software requirements
+We have compiled INCEpTION with the following:
+```
+java version "1.8.0_251"
+Java(TM) SE Runtime Environment (build 1.8.0_251-b08)
+Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)
+```
+
+For best compatibility, we suggest to use a similar version when running INCEpTION.
+
 ## Analysis
 This archive contains the data collected during the experiment, stored in spreadsheets, and the R scripts to analyze the data. If you open the R markdown (*.Rmd) files with Rstudio, the environment should offer the possibility to install the required statistical packages automatically.

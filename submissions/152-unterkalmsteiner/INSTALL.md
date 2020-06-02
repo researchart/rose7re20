@@ -2,6 +2,12 @@
 The artifacts can be downloaded from [Zenodo](http://doi.org/10.5281/zenodo.3827169).
 
 The repository contains two archives: `instrumentation.tar.gz` and `analysis.tar.gz`.
+Decompress these files first:
+
+    tar xzf instrumentation.tar.gz
+    tar xzf analysis.tar.gz
+
+The resulting folders (`instrumentation` and `analysis`) are described next.
 
 ## Instrumentation
 The source code of INCEpTION and our extension can be found in `inception-src.tar.gz`. The recommender is implemented in the module `inception-coclass-linking`. This archive is a snapshot of the code at the time of the experiment. The current version is available on our [github repository](https://github.com/munterkalmsteiner/inception), currently in the branch `CoClassRecommeder`.

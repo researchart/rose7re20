@@ -1,0 +1,113 @@
+Cause,Id
+Bad atmosphere in the group,20
+Changing business needs,21
+Communication flaws between team and customer,22
+Communication flaws between the project and the customer,23
+Complexity of domain,24
+Complexity of project,25
+Complexity of RE,26
+Concurrent development activities,27
+Conflict of interests at customer side,28
+Conflict of interests at management level,29
+Conflict of personalities,30
+Conflicting stakeholder viewpoints,31
+Customer does not formally approve the requirements,32
+Customer does not know what he wants,33
+Demotivation,34
+Different skill levels,35
+Poor documentation,36
+Gold plating,37
+High complexity in overall project setting,38
+High cost,39
+High quality expectation of customer,40
+High workload,41
+Inability to specify measurable non-functional requirements,42
+Inappropriate definition of contract,43
+Incomplete requirements,44
+Insufficient agility,45
+Insufficient analysis at the beginning of the project,46
+Insufficient collaboration in process,47
+Insufficient information,48
+Insufficient planning of RE,49
+Insufficient requirements,50
+Insufficient resource plan,51
+Insufficient resources,52
+Insufficient stakeholder analysis,53
+Insufficient team size,54
+Lack of a well-defined RE process,55
+Lack of change management at customer side,56
+Lack of communication channels,57
+Lack of creativity,58
+Lack of discipline,59
+Lack of experience of RE team members,60
+Lack of interest about customers domain,61
+Lack of leadership,62
+Lack of project management,63
+Lack of requirements management,64
+Lack of teamwork skills,65
+Lack of time,66
+Lack of training,67
+Lack of trust,68
+Language barriers,69
+Many customers,70
+Miscommunication between RE team,71
+Missing access to business needs,72
+Missing analysis,73
+Missing check of requirements,74
+Missing communication to customer side,75
+Missing company wide standard,76
+Missing completeness check of requirements,77
+Missing concentration on business needs,78
+Missing customer involvement,79
+Missing direct communication to customer,80
+Missing documentation,81
+Missing domain knowledge,82
+Missing engagement by customer,83
+Missing involvement of developers,84
+Missing IT project experience at customer side,85
+Missing knowledge about development framework,86
+Missing knowledge transfer,87
+Missing methodology,88
+Missing of a global view of the system,89
+Missing prioritization by customer,90
+Missing RE awareness at customer side,91
+Missing RE awareness at team side,92
+Missing requirements specification template,93
+Missing solution approach,94
+Missing technical knowledge,95
+Missing tool support,96
+Missing willingless to change,97
+Non-functional requirements unclear,98
+Not following the communication plan,99
+Policy restrictions,100
+Poor requirements elicitation techniques,101
+Pressure to not exceed priminarily defined resources,102
+Process doesn't allow for innovation,103
+Requirements engineer has no influence on customer,104
+Requirements remain too abstract,105
+Rework,106
+SE Team refrains from asking questions,107
+Solution orientation,108
+Solution orientration,109
+Stakeholder fluctuation,110
+Stakeholders lack business vision and understanding,111
+Strict time schedule by customer,112
+Subjective interpretations,113
+Team fluctuation,114
+Thinking in legacy systems,115
+Too high team distribution,116
+Too many meetings,117
+Unavailability of requirements engineer,118
+Unavailability of stakeholder,119
+Unclear business needs,120
+Unclear project scope,121
+Unclear roles and responsibilities at customer side,122
+Unclear terminology,123
+Unexpected changes in requirements,124
+Unfeasible requirements,125
+Volatile industry segment that leads to changes,126
+Volatile requirements,127
+Weak management at customer side,128
+Weak qualification of RE team members,129
+Weak qualification of stakeholders,130
+Workload of customer,131

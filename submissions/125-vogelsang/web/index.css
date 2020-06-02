@@ -1,0 +1,125 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media(min-width: 1250px)  {
+    body {
+        flex-direction: row;
+    }
+
+    #codes_container {
+        width: 700px;
+        margin-left: inherit;
+        margin-right: inherit;
+    }
+}
+
+
+/*
+ * Codes
+ */
+
+#codes table {
+    display: block;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#codes_container {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.codes-code {
+    width: 200px;
+}
+
+.codes-description {
+    width: 400px;
+}
+
+/*
+ * Architecture
+ */
+
+#connectivity_edgesweight, #connectivity_nodesweight {
+    width: 100px;
+}
+
+#connectivity_nodesnumber, #connectivity_edgesnumber {
+    width: 80px;
+}
+
+#legend {
+    margin-bottom: 20px;
+}
+
+#connectivity_nodesnumber>.min_weight, #connectivity_edgesnumber>.min_weight {
+    width: 100%;
+    margin-right: 0px;
+    margin-left: auto;
+    text-align: center;
+}
+
+.min_weight {
+    display: block;
+    width: 100%;
+}
+
+.min_weight[type="number"] {
+    margin-top: 5px;
+}
+
+.min_weight[type="checkbox"] {
+    margin-top: 8px
+}
+
+div.min_weight {
+    height: 28px;
+    text-align: right;
+}
+
+.evidence_drop li, .connectivity_drop li {
+    margin-bottom: 2px;
+    margin-top: 2px;
+    background-color: lightgrey;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    direction: rtl;
+    text-align: left;
+}
+
+.evidence_drop, .connectivity_drop {
+    display: block;
+    min-height: 50px;
+    cursor: grab;
+    list-style-type: none;
+    padding: 5px;
+    margin: 0px;
+}
+
+.evidence_drop li {
+    width: 190px;
+}
+
+table .evidence_drop {
+    width: 190px;
+    padding-right: 0px;
+}
+
+#evidence_unknown {
+    columns: 3;
+}
+
+
+#output_validation {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}

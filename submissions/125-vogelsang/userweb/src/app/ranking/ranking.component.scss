@@ -1,0 +1,73 @@
+.table {
+  display: table;
+  width: 100%;
+  div {
+    display: table-row;
+    div {
+      display: table-cell;
+      width: 450px;
+      height: 50px;
+      vertical-align: middle;
+
+      mat-slider {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+:host ::ng-deep .mat-slider-thumb-label {
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}
+
+:host ::ng-deep .mat-slider-thumb-label-text {
+  font-weight: bold;
+}
+
+mat-tab-group {
+  mat-slide-toggle {
+    margin: 6px;
+  }
+}
+
+.toggle-container {
+  overflow-y: hidden;
+}
+
+.mat-cell, mat-header-cell {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:host ::ng-deep .mat-card-header-text {
+  width: 100%;
+  text-align: center;
+}
+
+:host ::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  line-height: 36px;
+}
+
+.explanation {
+  color: rgba(0, 0, 0, 0.54);
+
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loading-message {
+  color: rgba(0, 0, 0, 0.54);
+
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 100px);
+  text-align: center
+}

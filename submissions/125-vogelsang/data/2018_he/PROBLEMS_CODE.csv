@@ -1,0 +1,21 @@
+Problem,Id
+Communication flaws between the project and the customer,0
+Communication flaws within the project team,1
+Discrepancy between high degree of innovation and need for formal acceptance of (potentially wrong / incomplete / unknown) requirements,2
+Gold plating (implementation of features without corresponding requirements),3
+Incomplete or hidden requirements,4
+Inconsistent requirements,5
+Insufficient support by customer,6
+Insufficient support by project lead,7
+Missing traceability,8
+"Moving targets (changing goals, business processes and / or requirements)",9
+Stakeholders with difficulties in separating requirements from previously known solution designs,10
+Technically unfeasible requirements,11
+Terminological problems,12
+Time boxing / Not enough time in general,13
+Unclear / unmeasurable non-functional requirements,14
+Underspecified requirements that are too abstract and allow for various interpretations,15
+"Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements",16
+Weak access to customer needs and / or (internal) business information,17
+Weak knowledge about customer's application domain,18
+Weak relationship between customer and project lead,19

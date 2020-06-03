@@ -13,7 +13,7 @@ We performed qualitative analysis through focus groups at each organization. We 
 
 This data represents two artifacts from our research in evaluating the complex relationship between shared understanding, non-functional requirements, continuous software engineering, and rework. It includes the resulting thematic synthesis codebook and inter-rater kappa values.
 
-### Artifact descriptions
+### Artifact Descriptions
 Our replication package contains two artifacts:
 1. Codebook.csv: The codebook itself contains a row for each code used (48 in total), including the code name, a brief description of the code, which round of coding that code was introduced, the total number of tasks that code appeared in (at least once), the number of tasks that code appeared in for each organization (Alpha, Beta, and Gamma), the total number of occurrences across all tasks, the number of occurrences across across each organization (Alpha, Beta, and Gamma), and the number of occurrences for each task.
 

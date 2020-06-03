@@ -31,7 +31,7 @@ To see an example of the suggestions produced by our recommender, follow these s
 3. Open the first document:
     
     ![](screenshot_3.png)
-4. Now wait until the recommender has done it's initialization (this is currently not cached and can take up to 3 minutes). Check out the console output of INCEpTION to see when the initial recommendations are ready:
+4. Now wait until the recommender has done its initialization (this is currently not cached and can take up to 3 minutes). Check out the console output of INCEpTION to see when the initial recommendations are ready:
     
     ![](screenshot_4.png)
 5. Press `F5` to reload the page (unfortunately, new recommendations do not trigger an automatic page reload yet)

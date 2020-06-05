@@ -10,3 +10,6 @@ With the submitted document the study detailed in our paper can be repeated and 
 ### Availability
 The survey document (pdf) has been made available on Zenodo -> https://zenodo.org/record/3674076#%23.XkxNFygzZPY
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3674076.svg)](https://doi.org/10.5281/zenodo.3674076)
+
+

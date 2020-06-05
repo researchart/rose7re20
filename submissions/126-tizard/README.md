@@ -16,7 +16,9 @@ The survey document (pdf) has been made available on Zenodo -> https://zenodo.or
 
 ### Study Objective
 Paper link: (TBC)
-The goal of the study is to discover which software users give online written feedback to app stores, product forums and social media.
+
+Online user feedback about software products has been given a lot of focus in requirements research in recent year. However, only a subset of software users give online feedback, therefore we should ask, how representative is this feedback?
+In this study we directly survey software users to understand which demographics write online feedback and what motivates them to do so. 
 
 ### Study Design
 

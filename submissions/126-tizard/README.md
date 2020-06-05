@@ -13,9 +13,10 @@ The survey document (pdf) has been made available on Zenodo -> https://zenodo.or
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3674076.svg)](https://doi.org/10.5281/zenodo.3674076)
 
 ## Study Overview
-Paper link: (TBC)
 
 ### Study Objective
+Paper link: (TBC)
+The goal of the study is to discover which software users give online written feedback to app stores, product forums and social media.
 
 ### Study Design
 

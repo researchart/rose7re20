@@ -29,6 +29,8 @@ The survey had ethics approval from the University of Auckland's Human Participa
 
 ### Recruitment, Data Collection and Analysis  
 
+*Note: The methodology described below was used in our study and are not necessarily required for reuse of the survey.*
+
 To recruit participants, convenience sampling was used. This was chosen as the best method to engage a good number of survey participants in a reasonable time period. The survey was primarily made available online through the Qualtics survey platform. 
 
 To answer our research questions, we analysed the ratio of respondents in each user group (based on demographics or software usage) that  reported a particular behaviour, e.g. giving feedback on a particular feedback channel or having a certain motivation. Chi-squared tests, which tests for differences in proportion between two groups, were used to find if differences in reported behaviours between user groups are statistically significant.

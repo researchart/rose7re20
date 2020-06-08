@@ -43,5 +43,5 @@ as the process is killed (the output is "Killed: 9"). We recommend using Window
 
 [1] Dan-Glauser, E. S., & Scherer, K. R. (2011). The Geneva affective picture database (GAPED): a new 730-picture database focusing on valence and normative significance. Behavior research methods, 43(2), 468.
 
-[2] Girardi, D., Novielli, N., Fucci, D., & Lanubile, F. (2020). Recognizing Developers' Emotions while Programming. 
-To appear in ICSE'20, arXiv preprint arXiv:2001.09177.
+[2] Daniela Girardi, Nicole Novielli, Davide Fucci, and Filippo Lanubile. 2020. 
+“Recognizing Developers’ Emotions while Programming”. In Proceedings of 42nd International Conference on Software Engineering, Seoul, Republic of Korea, May 23–29, 2020 (ICSE ’20), 12 pages. DOI: https://doi.org/10.1145/3377811.3380374 

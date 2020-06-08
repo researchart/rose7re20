@@ -7,9 +7,24 @@ To install all the libraries needed to run the scripts use the command:
 ```
 Rscript install.R
 ```
+and
+
+```
+pip install cvxopt`
+```
+
+
+
 ### Dependencies
 
-The machine learning analysis is based on the [caret](https://cran.r-project.org/web/packages/caret/index.html) package
+The machine learning analysis is based on the [caret](https://cran.r-project.org/web/packages/caret/index.html) package. 
+
+The features extraction scripts are based and reuse part of: 
+
+1.  the [cvxEDA](https://github.com/lciti/cvxEDA) algorithm described in A Greco, G Valenza, A Lanata, EP Scilingo, and L Citi "cvxEDA: a Convex Optimization Approach to Electrodermal Activity Processing"
+   IEEE Transactions on Biomedical Engineering, 2015 DOI: 10.1109/TBME.2015.2474131. 
+2. the Biosppy package developed by Carreiras C, Alves AP, Lourenço A, Canento F, Silva H, Fred A, *et al.*
+   BioSPPy - Biosignal Processing in Python, 2015-, https://github.com/PIA-Group/BioSPPy/ 
 
 ### How to use the scripts
 
@@ -18,8 +33,10 @@ In particular, the scripts can be used to:
 - to create clusters based on self-report normalized scores for valence and arousal and, consequently, derive the labels to train the classifier.  As input file we used the file "Discretization.xlsx". The command to run the script is:
 
   ```
-  Rscript Discretization.R <input_file> 
+  Rscript Discretization.R <input_file> <output_file>
   ```
+
+  As output of this script we obtained the file "Cluster_labels.xlsx", where we manually derived the labels using excel formulas starting from the column "Category"
 
 - extract features from data collected using the Empatica E4 wristband. The file "Emotions.R" reads the biometric data of the subjects from the folder "DataSubjects". In this folder we provide an example to show how subject data must be formatted. The command to run the script is:
 

@@ -87,20 +87,20 @@ if(!dir.exists(output_dir))
 
 signals <- c("EDA", "HR", "BVP")
 output_files <- c(paste(output_dir,"EDA_dataset.csv", sep="/"),
-                  paste(output_dir,"TEMP_dataset.csv", sep="/"), 
+                  #paste(output_dir,"TEMP_dataset.csv", sep="/"), 
                   paste(output_dir,"HR_dataset.csv", sep="/"),
                   paste(output_dir,"BVP_dataset.csv", sep="/"))
                   #paste(output_dir,"HRV_dataset.csv", sep="/"))
 
 EDA_header <- "id,mean_SCL, AUC_Phasic, min_peak_amplitude, max_peak_amplitude, mean_phasic_peak, sum_phasic_peak_amplitude,valence, arousal"
-TEMP_header <- "id,mean_temp, mean_temp_difference, max_temp, max_temp_difference, min_temp, min_temp_difference,valence, arousal"
+#TEMP_header <- "id,mean_temp, mean_temp_difference, max_temp, max_temp_difference, min_temp, min_temp_difference,valence, arousal"
 HR_header <- "id,HR_mean_difference, HR_variance_difference,valence, arousal"
 BVP_header <- "id, mean_BVPpeaks_ampl, min_BVPpeaks_ampl, max_BVPpeaks_ampl, sum_peak_ampl,valence, arousal"
 #HRV_header <- "id,sdnn, rmssd, valence, arousal"
 
 
 write(EDA_header, paste(output_dir,"EDA_dataset.csv", sep="/"), append=FALSE)
-write(TEMP_header, paste(output_dir,"TEMP_dataset.csv", sep="/"), append=FALSE)
+#write(TEMP_header, paste(output_dir,"TEMP_dataset.csv", sep="/"), append=FALSE)
 write(HR_header, paste(output_dir,"HR_dataset.csv", sep="/"), append=FALSE)
 write(BVP_header, paste(output_dir,"BVP_dataset.csv", sep="/"), append=FALSE)
 #write(HRV_header, paste(output_dir,"HRV_dataset.csv", sep="/"), append= FALSE)
